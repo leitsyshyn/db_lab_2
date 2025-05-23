@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["typedSql"]
+  output   = "../src/app/generated/prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id         String   @id @default(uuid())
+  name       String
+  country    String?
+  bio        String?
+  image      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  albums     Album[]
+}
+
+model Album {
+  id          String   @id @default(uuid())
+  title       String
+  image      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  artistId    String
+  artist      Artist   @relation(fields: [artistId], references: [id])
+
+  tracks      Track[]
+}
+
+model Track {
+  id             String               @id @default(uuid())
+  title          String
+  duration       Int
+  albumPosition  Int?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+
+  albumId        String
+  album         Album             @relation(fields: [albumId], references: [id])
+
+  genres         TrackGenre[]
+  playlists      PlaylistTrack[]
+}
+
+model Genre {
+  id     String      @id @default(uuid())
+  name   String      @unique
+
+  tracks TrackGenre[]
+}
+
+model TrackGenre {
+  trackId  String
+  genreId  String
+
+  track    Track      @relation(fields: [trackId], references: [id])
+  genre    Genre      @relation(fields: [genreId], references: [id])
+
+  @@id([trackId, genreId])
+}
+
+model User {
+  id            String      @id @default(uuid())
+  username      String      @unique
+  email         String      @unique
+  password      String
+  bio           String?
+  image         String?
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  playlists     Playlist[]
+}
+
+model Playlist {
+  id          String               @id @default(uuid())
+  name        String
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  userId      String
+  user        User              @relation(fields: [userId], references: [id])
+
+  tracks      PlaylistTrack[]
+}
+
+model PlaylistTrack {
+  playlistId  String
+  trackId     String
+  createdAt   DateTime         @default(now())
+  trackOrder  Int?
+
+  playlist    Playlist         @relation(fields: [playlistId], references: [id])
+  track       Track            @relation(fields: [trackId], references: [id])
+
+  @@id([playlistId, trackId])
+}
