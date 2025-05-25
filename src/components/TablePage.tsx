@@ -1,15 +1,16 @@
 "use client";
 
 import { DataTable } from "@/components/DataTable";
-import { columnsFromSchema } from "@/components/columnsFromSchema";
-import { DialogFromSchema } from "@/components/DialogFromSchema";
+import { columnsFromSchema } from "@/components/columns";
+import { ActionDialog } from "@/components/ActionDialog";
 import { DeleteButton } from "@/components/DeleteButton";
 import { QueryKey, useQuery, useQueryClient } from "@tanstack/react-query";
 import { z, ZodObject, ZodRawShape } from "zod";
 import React from "react";
 import { DefaultValues } from "react-hook-form";
+import { ColumnDef } from "@tanstack/react-table";
 
-export interface CrudTableProps<
+export interface TablePageProps<
   Schema extends ZodObject<ZodRawShape>,
   CreateSchema extends ZodObject<ZodRawShape>,
   UpdateSchema extends ZodObject<ZodRawShape>
@@ -19,16 +20,16 @@ export interface CrudTableProps<
   fetchFn: () => Promise<z.infer<Schema>[]>;
   schema: Schema;
   createSchema?: CreateSchema;
-  createFn: (values: Omit<z.infer<CreateSchema>, "id">) => Promise<void>;
+  createFn?: (values: Omit<z.infer<CreateSchema>, "id">) => Promise<void>;
   updateSchema?: UpdateSchema;
-  updateFn: (id: string, values: z.infer<UpdateSchema>) => Promise<void>;
-  deleteFn: (id: string) => Promise<void>;
+  updateFn?: (id: string, values: z.infer<UpdateSchema>) => Promise<void>;
+  deleteFn?: (id: string) => Promise<void>;
 }
 export function TablePage<
   Schema extends ZodObject<ZodRawShape>,
   CreateSchema extends ZodObject<ZodRawShape> = ZodObject<Schema["shape"]>,
   UpdateSchema extends ZodObject<ZodRawShape> = ZodObject<Schema["shape"]>
->(props: CrudTableProps<Schema, CreateSchema, UpdateSchema>) {
+>(props: TablePageProps<Schema, CreateSchema, UpdateSchema>) {
   const {
     title,
     queryKey,
@@ -64,11 +65,12 @@ export function TablePage<
 
   const invalidate = () => queryClient.invalidateQueries({ queryKey });
 
-  const overrides = {
-    edit: {
+  const overrides: Record<string, Partial<ColumnDef<T>>> = {};
+  if (updateFn) {
+    overrides.edit = {
       id: "edit",
       cell: ({ row }: { row: { original: T } }) => (
-        <DialogFromSchema
+        <ActionDialog
           title={`Edit ${title}`}
           schema={updateSchema}
           defaultValues={row.original as DefaultValues<UpdateT>}
@@ -79,8 +81,10 @@ export function TablePage<
           }}
         />
       ),
-    },
-    delete: {
+    };
+  }
+  if (deleteFn) {
+    overrides.delete = {
       id: "delete",
       cell: ({ row }: { row: { original: T } }) => (
         <DeleteButton
@@ -93,23 +97,25 @@ export function TablePage<
           }}
         />
       ),
-    },
-  };
+    };
+  }
 
   const cols = columnsFromSchema(schema, overrides);
 
   return (
     <div>
-      <DialogFromSchema
-        title={`Create ${title}`}
-        schema={createSchema}
-        defaultValues={{} as DefaultValues<CreateT>}
-        queryKey={queryKey}
-        submitFn={async (values: CreateT) => {
-          await createFn(values);
-          invalidate();
-        }}
-      />
+      {createFn && (
+        <ActionDialog
+          title={`Create ${title}`}
+          schema={createSchema}
+          defaultValues={{} as DefaultValues<CreateT>}
+          queryKey={queryKey}
+          submitFn={async (values: CreateT) => {
+            await createFn(values);
+            invalidate();
+          }}
+        />
+      )}
 
       {isLoading && <div>Loading…</div>}
       {isError && <div>Error: {error!.message}</div>}

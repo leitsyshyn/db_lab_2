@@ -23,9 +23,31 @@ export default function Home() {
         <li>
           <Link href="/tables/users">Users</Link>
         </li>
-        Queries Simple
+        Simple Queries
         <li>
-          <Link href="/queries/simple/artists">ArtistsWithAlbumsAfterDate</Link>
+          <Link href="/queries/simple/query1">Query 1</Link>
+        </li>
+        <li>
+          <Link href="/queries/simple/query2">Query 2</Link>
+        </li>
+        <li>
+          <Link href="/queries/simple/query3">Query 3</Link>
+        </li>
+        <li>
+          <Link href="/queries/simple/query4">Query 4</Link>
+        </li>
+        <li>
+          <Link href="/queries/simple/query5">Query 5</Link>
+        </li>
+        Set Comparison Queries
+        <li>
+          <Link href="/queries/setComparison/query1">Query 1</Link>
+        </li>
+        <li>
+          <Link href="/queries/setComparison/query2">Query 2</Link>
+        </li>
+        <li>
+          <Link href="/queries/setComparison/query3">Query 3</Link>
         </li>
       </ul>
     </div>

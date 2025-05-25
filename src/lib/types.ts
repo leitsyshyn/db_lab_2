@@ -21,6 +21,22 @@ import {
   PlaylistSchema,
   PlaylistTrackCreateSchema,
   PlaylistTrackSchema,
+  simpleQuery1Schema,
+  setComparisonQuery1Schema,
+  setComparisonQuery2Schema,
+  setComparisonQuery3Schema,
+  simpleQuery2Schema,
+  simpleQuery3Schema,
+  simpleQuery4Schema,
+  simpleQuery5Schema,
+  simpleQuery1ParamsSchema,
+  simpleQuery2ParamsSchema,
+  simpleQuery3ParamsSchema,
+  simpleQuery4ParamsSchema,
+  simpleQuery5ParamsSchema,
+  setComparisonQuery1ParamsSchema,
+  setComparisonQuery2ParamsSchema,
+  setComparisonQuery3ParamsSchema,
 } from "./schemas";
 
 // Artist
@@ -60,3 +76,33 @@ export type Playlist = z.infer<typeof PlaylistSchema>;
 // PlaylistTrack (junction)
 export type PlaylistTrackCreate = z.infer<typeof PlaylistTrackCreateSchema>;
 export type PlaylistTrack = z.infer<typeof PlaylistTrackSchema>;
+
+// Simple Queries
+export type SimpleQuery1 = z.infer<typeof simpleQuery1Schema>;
+export type SimpleQuery2 = z.infer<typeof simpleQuery2Schema>;
+export type SimpleQuery3 = z.infer<typeof simpleQuery3Schema>;
+export type SimpleQuery4 = z.infer<typeof simpleQuery4Schema>;
+export type SimpleQuery5 = z.infer<typeof simpleQuery5Schema>;
+
+// Set Comparison Queries
+export type SetComparisonQuery1 = z.infer<typeof setComparisonQuery1Schema>;
+export type SetComparisonQuery2 = z.infer<typeof setComparisonQuery2Schema>;
+export type SetComparisonQuery3 = z.infer<typeof setComparisonQuery3Schema>;
+
+// Simple Query Params
+export type SimpleQuery1Params = z.infer<typeof simpleQuery1ParamsSchema>;
+export type SimpleQuery2Params = z.infer<typeof simpleQuery2ParamsSchema>;
+export type SimpleQuery3Params = z.infer<typeof simpleQuery3ParamsSchema>;
+export type SimpleQuery4Params = z.infer<typeof simpleQuery4ParamsSchema>;
+export type SimpleQuery5Params = z.infer<typeof simpleQuery5ParamsSchema>;
+
+// Set Comparison Query Params
+export type SetComparisonQuery1Params = z.infer<
+  typeof setComparisonQuery1ParamsSchema
+>;
+export type SetComparisonQuery2Params = z.infer<
+  typeof setComparisonQuery2ParamsSchema
+>;
+export type SetComparisonQuery3Params = z.infer<
+  typeof setComparisonQuery3ParamsSchema
+>;

@@ -98,3 +98,48 @@ export const PlaylistTrackCreateSchema = z.object({
 export const PlaylistTrackSchema = PlaylistTrackCreateSchema.extend({
   createdAt: date,
 });
+
+// Simple Queries
+export const simpleQuery1Schema = AlbumSchema;
+export const simpleQuery2Schema = ArtistSchema;
+export const simpleQuery3Schema = PlaylistSchema;
+export const simpleQuery4Schema = UserSchema;
+export const simpleQuery5Schema = TrackSchema;
+
+// Set Comparison Queries
+export const setComparisonQuery1Schema = PlaylistSchema;
+export const setComparisonQuery2Schema = UserSchema;
+export const setComparisonQuery3Schema = z.object({
+  name1: requiredString,
+  name2: requiredString,
+});
+
+// Simple Query Params
+export const simpleQuery1ParamsSchema = z.object({
+  minTrackCount: z.coerce.number().int().positive(),
+});
+export const simpleQuery2ParamsSchema = z.object({
+  minDate: z.coerce.date(),
+});
+export const simpleQuery3ParamsSchema = z.object({
+  minGenreCount: z.coerce.number().int().positive(),
+});
+export const simpleQuery4ParamsSchema = z.object({
+  country: z.string(),
+});
+export const simpleQuery5ParamsSchema = z.object({
+  genreName: z.string(),
+  minTrackDuration: z.coerce.number().int().positive(),
+});
+
+// Set Comparison Query Params
+export const setComparisonQuery1ParamsSchema = z.object({
+  username: requiredString,
+});
+export const setComparisonQuery2ParamsSchema = z.object({
+  albumName: requiredString,
+});
+export const setComparisonQuery3ParamsSchema = z.object({
+  name1: requiredString,
+  name2: requiredString,
+});
