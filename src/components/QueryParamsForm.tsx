@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { Combobox, Option } from "@/components/ui/combobox";
 import {
   z,
   ZodRawShape,
@@ -28,7 +29,9 @@ import {
   ZodFirstPartyTypeKind,
 } from "zod";
 import { QueryKey, useQueryClient } from "@tanstack/react-query";
-
+import { DatePicker } from "@/components/ui/date-picker";
+import { getCountryName } from "@/lib/utils";
+import { Play } from "lucide-react";
 interface QueryParamsFormProps<Schema extends ZodObject<ZodRawShape>> {
   schema: Schema;
   defaultValues: DefaultValues<z.infer<Schema>>;
@@ -70,6 +73,26 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
     const kind = core._def.typeName as ZodFirstPartyTypeKind;
 
     switch (kind) {
+      case ZodFirstPartyTypeKind.ZodEnum:
+      case ZodFirstPartyTypeKind.ZodNativeEnum: {
+        const raw = core._def.values;
+        const vals: string[] = Array.isArray(raw)
+          ? raw
+          : Object.values(raw as Record<string, string>);
+        const options: Option[] = vals.map((v) => ({
+          value: v,
+          label: getCountryName(v) || v,
+        }));
+        return (
+          <Combobox
+            ref={field.ref}
+            options={options}
+            value={field.value as string}
+            onChange={field.onChange}
+          />
+        );
+      }
+
       case ZodFirstPartyTypeKind.ZodNumber:
         return <Input type="number" {...field} />;
 
@@ -79,10 +102,12 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
         );
 
       case ZodFirstPartyTypeKind.ZodDate:
-        const dateValue = field.value
-          ? new Date(field.value).toISOString().substring(0, 10)
-          : "";
-        return <Input type="date" {...field} value={dateValue} />;
+        return (
+          <DatePicker
+            value={field.value ?? undefined}
+            onChange={(date) => field.onChange(date)}
+          />
+        );
 
       default:
         return <Input {...field} />;
@@ -96,14 +121,17 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex justify-between items-end space-y-4 gap-4"
+      >
         {Object.entries(schema.shape).map(([key, fieldSchema]) => (
           <FormField
             key={key}
             control={form.control}
             name={key as Path<FormValues>}
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormLabel>{key}</FormLabel>
                 <FormControl>{renderInput(fieldSchema, field)}</FormControl>
                 <FormMessage />
@@ -114,8 +142,10 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
 
         <Button
           type="submit"
+          className="mb-4"
           disabled={!form.formState.isValid || form.formState.isSubmitting}
         >
+          <Play />
           Execute
         </Button>
       </form>

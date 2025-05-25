@@ -55,6 +55,270 @@ export type Playlist = $Result.DefaultSelection<Prisma.$PlaylistPayload>
 export type PlaylistTrack = $Result.DefaultSelection<Prisma.$PlaylistTrackPayload>
 
 /**
+ * Enums
+ */
+export namespace $Enums {
+  export const Country: {
+  AF: 'AF',
+  AX: 'AX',
+  AL: 'AL',
+  DZ: 'DZ',
+  AS: 'AS',
+  AD: 'AD',
+  AO: 'AO',
+  AI: 'AI',
+  AQ: 'AQ',
+  AG: 'AG',
+  AR: 'AR',
+  AM: 'AM',
+  AW: 'AW',
+  AU: 'AU',
+  AT: 'AT',
+  AZ: 'AZ',
+  BS: 'BS',
+  BH: 'BH',
+  BD: 'BD',
+  BB: 'BB',
+  BY: 'BY',
+  BE: 'BE',
+  BZ: 'BZ',
+  BJ: 'BJ',
+  BM: 'BM',
+  BT: 'BT',
+  BO: 'BO',
+  BQ: 'BQ',
+  BA: 'BA',
+  BW: 'BW',
+  BV: 'BV',
+  BR: 'BR',
+  IO: 'IO',
+  BN: 'BN',
+  BG: 'BG',
+  BF: 'BF',
+  BI: 'BI',
+  CV: 'CV',
+  KH: 'KH',
+  CM: 'CM',
+  CA: 'CA',
+  KY: 'KY',
+  CF: 'CF',
+  TD: 'TD',
+  CL: 'CL',
+  CN: 'CN',
+  CX: 'CX',
+  CC: 'CC',
+  CO: 'CO',
+  KM: 'KM',
+  CG: 'CG',
+  CD: 'CD',
+  CK: 'CK',
+  CR: 'CR',
+  CI: 'CI',
+  HR: 'HR',
+  CU: 'CU',
+  CW: 'CW',
+  CY: 'CY',
+  CZ: 'CZ',
+  DK: 'DK',
+  DJ: 'DJ',
+  DM: 'DM',
+  DO: 'DO',
+  EC: 'EC',
+  EG: 'EG',
+  SV: 'SV',
+  GQ: 'GQ',
+  ER: 'ER',
+  EE: 'EE',
+  SZ: 'SZ',
+  ET: 'ET',
+  FK: 'FK',
+  FO: 'FO',
+  FJ: 'FJ',
+  FI: 'FI',
+  FR: 'FR',
+  GF: 'GF',
+  PF: 'PF',
+  TF: 'TF',
+  GA: 'GA',
+  GM: 'GM',
+  GE: 'GE',
+  DE: 'DE',
+  GH: 'GH',
+  GI: 'GI',
+  GR: 'GR',
+  GL: 'GL',
+  GD: 'GD',
+  GP: 'GP',
+  GU: 'GU',
+  GT: 'GT',
+  GG: 'GG',
+  GN: 'GN',
+  GW: 'GW',
+  GY: 'GY',
+  HT: 'HT',
+  HM: 'HM',
+  VA: 'VA',
+  HN: 'HN',
+  HK: 'HK',
+  HU: 'HU',
+  IS: 'IS',
+  IN: 'IN',
+  ID: 'ID',
+  IR: 'IR',
+  IQ: 'IQ',
+  IE: 'IE',
+  IM: 'IM',
+  IL: 'IL',
+  IT: 'IT',
+  JM: 'JM',
+  JP: 'JP',
+  JE: 'JE',
+  JO: 'JO',
+  KZ: 'KZ',
+  KE: 'KE',
+  KI: 'KI',
+  KP: 'KP',
+  KR: 'KR',
+  KW: 'KW',
+  KG: 'KG',
+  LA: 'LA',
+  LV: 'LV',
+  LB: 'LB',
+  LS: 'LS',
+  LR: 'LR',
+  LY: 'LY',
+  LI: 'LI',
+  LT: 'LT',
+  LU: 'LU',
+  MO: 'MO',
+  MG: 'MG',
+  MW: 'MW',
+  MY: 'MY',
+  MV: 'MV',
+  ML: 'ML',
+  MT: 'MT',
+  MH: 'MH',
+  MQ: 'MQ',
+  MR: 'MR',
+  MU: 'MU',
+  YT: 'YT',
+  MX: 'MX',
+  FM: 'FM',
+  MD: 'MD',
+  MC: 'MC',
+  MN: 'MN',
+  ME: 'ME',
+  MS: 'MS',
+  MA: 'MA',
+  MZ: 'MZ',
+  MM: 'MM',
+  NA: 'NA',
+  NR: 'NR',
+  NP: 'NP',
+  NL: 'NL',
+  NC: 'NC',
+  NZ: 'NZ',
+  NI: 'NI',
+  NE: 'NE',
+  NG: 'NG',
+  NU: 'NU',
+  NF: 'NF',
+  MK: 'MK',
+  MP: 'MP',
+  NO: 'NO',
+  OM: 'OM',
+  PK: 'PK',
+  PW: 'PW',
+  PS: 'PS',
+  PA: 'PA',
+  PG: 'PG',
+  PY: 'PY',
+  PE: 'PE',
+  PH: 'PH',
+  PN: 'PN',
+  PL: 'PL',
+  PT: 'PT',
+  PR: 'PR',
+  QA: 'QA',
+  RE: 'RE',
+  RO: 'RO',
+  RU: 'RU',
+  RW: 'RW',
+  BL: 'BL',
+  SH: 'SH',
+  KN: 'KN',
+  LC: 'LC',
+  MF: 'MF',
+  PM: 'PM',
+  VC: 'VC',
+  WS: 'WS',
+  SM: 'SM',
+  ST: 'ST',
+  SA: 'SA',
+  SN: 'SN',
+  RS: 'RS',
+  SC: 'SC',
+  SL: 'SL',
+  SG: 'SG',
+  SX: 'SX',
+  SK: 'SK',
+  SI: 'SI',
+  SB: 'SB',
+  SO: 'SO',
+  ZA: 'ZA',
+  GS: 'GS',
+  SS: 'SS',
+  ES: 'ES',
+  LK: 'LK',
+  SD: 'SD',
+  SR: 'SR',
+  SJ: 'SJ',
+  SE: 'SE',
+  CH: 'CH',
+  SY: 'SY',
+  TW: 'TW',
+  TJ: 'TJ',
+  TZ: 'TZ',
+  TH: 'TH',
+  TL: 'TL',
+  TG: 'TG',
+  TK: 'TK',
+  TO: 'TO',
+  TT: 'TT',
+  TN: 'TN',
+  TR: 'TR',
+  TM: 'TM',
+  TC: 'TC',
+  TV: 'TV',
+  UG: 'UG',
+  UA: 'UA',
+  AE: 'AE',
+  GB: 'GB',
+  US: 'US',
+  UM: 'UM',
+  UY: 'UY',
+  UZ: 'UZ',
+  VU: 'VU',
+  VE: 'VE',
+  VN: 'VN',
+  VG: 'VG',
+  VI: 'VI',
+  WF: 'WF',
+  EH: 'EH',
+  YE: 'YE',
+  ZM: 'ZM',
+  ZW: 'ZW'
+};
+
+export type Country = (typeof Country)[keyof typeof Country]
+
+}
+
+export type Country = $Enums.Country
+
+export const Country: typeof $Enums.Country
+
+/**
  * ##  Prisma Client ʲˢ
  *
  * Type-safe database client for TypeScript & Node.js
@@ -1727,7 +1991,7 @@ export namespace Prisma {
   export type ArtistMinAggregateOutputType = {
     id: string | null
     name: string | null
-    country: string | null
+    country: $Enums.Country | null
     bio: string | null
     image: string | null
     createdAt: Date | null
@@ -1737,7 +2001,7 @@ export namespace Prisma {
   export type ArtistMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    country: string | null
+    country: $Enums.Country | null
     bio: string | null
     image: string | null
     createdAt: Date | null
@@ -1862,7 +2126,7 @@ export namespace Prisma {
   export type ArtistGroupByOutputType = {
     id: string
     name: string
-    country: string | null
+    country: $Enums.Country | null
     bio: string | null
     image: string | null
     createdAt: Date
@@ -1944,7 +2208,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      country: string | null
+      country: $Enums.Country | null
       bio: string | null
       image: string | null
       createdAt: Date
@@ -2375,7 +2639,7 @@ export namespace Prisma {
   interface ArtistFieldRefs {
     readonly id: FieldRef<"Artist", 'String'>
     readonly name: FieldRef<"Artist", 'String'>
-    readonly country: FieldRef<"Artist", 'String'>
+    readonly country: FieldRef<"Artist", 'Country'>
     readonly bio: FieldRef<"Artist", 'String'>
     readonly image: FieldRef<"Artist", 'String'>
     readonly createdAt: FieldRef<"Artist", 'DateTime'>
@@ -10580,6 +10844,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Country'
+   */
+  export type EnumCountryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Country'>
+    
+
+
+  /**
+   * Reference to a field of type 'Country[]'
+   */
+  export type ListEnumCountryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Country[]'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -10630,7 +10908,7 @@ export namespace Prisma {
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     id?: StringFilter<"Artist"> | string
     name?: StringFilter<"Artist"> | string
-    country?: StringNullableFilter<"Artist"> | string | null
+    country?: EnumCountryNullableFilter<"Artist"> | $Enums.Country | null
     bio?: StringNullableFilter<"Artist"> | string | null
     image?: StringNullableFilter<"Artist"> | string | null
     createdAt?: DateTimeFilter<"Artist"> | Date | string
@@ -10655,7 +10933,7 @@ export namespace Prisma {
     OR?: ArtistWhereInput[]
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     name?: StringFilter<"Artist"> | string
-    country?: StringNullableFilter<"Artist"> | string | null
+    country?: EnumCountryNullableFilter<"Artist"> | $Enums.Country | null
     bio?: StringNullableFilter<"Artist"> | string | null
     image?: StringNullableFilter<"Artist"> | string | null
     createdAt?: DateTimeFilter<"Artist"> | Date | string
@@ -10682,7 +10960,7 @@ export namespace Prisma {
     NOT?: ArtistScalarWhereWithAggregatesInput | ArtistScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Artist"> | string
     name?: StringWithAggregatesFilter<"Artist"> | string
-    country?: StringNullableWithAggregatesFilter<"Artist"> | string | null
+    country?: EnumCountryNullableWithAggregatesFilter<"Artist"> | $Enums.Country | null
     bio?: StringNullableWithAggregatesFilter<"Artist"> | string | null
     image?: StringNullableWithAggregatesFilter<"Artist"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Artist"> | Date | string
@@ -11096,7 +11374,7 @@ export namespace Prisma {
   export type ArtistCreateInput = {
     id?: string
     name: string
-    country?: string | null
+    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -11107,7 +11385,7 @@ export namespace Prisma {
   export type ArtistUncheckedCreateInput = {
     id?: string
     name: string
-    country?: string | null
+    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -11118,7 +11396,7 @@ export namespace Prisma {
   export type ArtistUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11129,7 +11407,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11140,7 +11418,7 @@ export namespace Prisma {
   export type ArtistCreateManyInput = {
     id?: string
     name: string
-    country?: string | null
+    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -11150,7 +11428,7 @@ export namespace Prisma {
   export type ArtistUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11160,7 +11438,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11585,6 +11863,13 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type EnumCountryNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
+    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCountryNullableFilter<$PrismaModel> | $Enums.Country | null
+  }
+
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -11672,6 +11957,16 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type EnumCountryNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
+    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel> | $Enums.Country | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCountryNullableFilter<$PrismaModel>
+    _max?: NestedEnumCountryNullableFilter<$PrismaModel>
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -12039,6 +12334,10 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableEnumCountryFieldUpdateOperationsInput = {
+    set?: $Enums.Country | null
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -12457,6 +12756,13 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedEnumCountryNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
+    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCountryNullableFilter<$PrismaModel> | $Enums.Country | null
+  }
+
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -12510,6 +12816,27 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
+    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel> | $Enums.Country | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumCountryNullableFilter<$PrismaModel>
+    _max?: NestedEnumCountryNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -12525,17 +12852,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -12665,7 +12981,7 @@ export namespace Prisma {
   export type ArtistCreateWithoutAlbumsInput = {
     id?: string
     name: string
-    country?: string | null
+    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -12675,7 +12991,7 @@ export namespace Prisma {
   export type ArtistUncheckedCreateWithoutAlbumsInput = {
     id?: string
     name: string
-    country?: string | null
+    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -12733,7 +13049,7 @@ export namespace Prisma {
   export type ArtistUpdateWithoutAlbumsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -12743,7 +13059,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateWithoutAlbumsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

@@ -14,7 +14,7 @@ import { Trash } from "lucide-react";
 import { toast } from "sonner";
 
 interface DeleteButtonProps {
-  title: string;
+  item: string;
   id: string;
   queryKey: QueryKey;
   deleteFn: (id: string) => Promise<void>;
@@ -22,7 +22,7 @@ interface DeleteButtonProps {
 }
 
 export function DeleteButton({
-  title,
+  item,
   id,
   queryKey,
   deleteFn,
@@ -34,12 +34,12 @@ export function DeleteButton({
     mutationFn: deleteFn,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey });
-      toast.success(`Deleted ${title} successfully!`);
+      toast.success(`${item} delete successfull!`);
       onDelete?.(id);
     },
     onError: (error) => {
-      toast.error(`Error deleting ${title}`);
-      console.error(`Error deleting ${title}:`, error);
+      toast.error(`Feiled to delete ${item}`);
+      console.error(`Failed to delete ${item}:`, error);
     },
   });
 
@@ -50,15 +50,20 @@ export function DeleteButton({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="icon" variant="destructive" disabled={mutation.isPending}>
+        <Button
+          size="icon"
+          variant="destructive"
+          className="bg-secondary text-secondary-foreground hover:text-white"
+          disabled={mutation.isPending}
+        >
           <Trash />
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Delete {title}</DialogTitle>
+          <DialogTitle>Delete {item.toLowerCase()}</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete this {title}?
+            Are you sure you want to delete this {item.toLowerCase()}?
           </DialogDescription>
         </DialogHeader>
 

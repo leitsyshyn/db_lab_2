@@ -1,4 +1,13 @@
-import { Album, Artist, Genre, Playlist, Track, User } from "@/lib/types";
+import {
+  Album,
+  Artist,
+  Genre,
+  Playlist,
+  PlaylistTrack,
+  Track,
+  TrackGenre,
+  User,
+} from "@/lib/types";
 
 export async function fetchArtists(): Promise<Artist[]> {
   const res = await fetch("/api/tables/artists");
@@ -32,4 +41,24 @@ export async function fetchUsers(): Promise<User[]> {
   const res = await fetch("/api/tables/users");
   if (!res.ok) throw new Error("Failed to fetch users");
   return await res.json();
+}
+
+export async function fetchPlaylistTracks(): Promise<PlaylistTrack[]> {
+  const res = await fetch("/api/tables/playlistTracks");
+  if (!res.ok) throw new Error("Failed to fetch playlist tracks");
+  const raw = await res.json();
+  return raw.map((item: PlaylistTrack) => ({
+    ...item,
+    id: `${item.playlistId}_${item.trackId}`,
+  }));
+}
+
+export async function fetchTrackGenres(): Promise<TrackGenre[]> {
+  const res = await fetch("/api/tables/trackGenres");
+  if (!res.ok) throw new Error("Failed to fetch track genres");
+  const raw = await res.json();
+  return raw.map((item: TrackGenre) => ({
+    ...item,
+    id: `${item.trackId}_${item.genreId}`,
+  }));
 }

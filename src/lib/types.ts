@@ -37,6 +37,8 @@ import {
   setComparisonQuery1ParamsSchema,
   setComparisonQuery2ParamsSchema,
   setComparisonQuery3ParamsSchema,
+  PlaylistTrackUpdateSchema,
+  TrackGenreUpdateSchema,
 } from "./schemas";
 
 // Artist
@@ -62,6 +64,7 @@ export type Genre = z.infer<typeof GenreSchema>;
 // TrackGenre (junction)
 export type TrackGenreCreate = z.infer<typeof TrackGenreCreateSchema>;
 export type TrackGenre = TrackGenreCreate;
+export type TrackGenreUpdate = z.infer<typeof TrackGenreUpdateSchema>;
 
 // User
 export type UserCreate = z.infer<typeof UserCreateSchema>;
@@ -76,6 +79,7 @@ export type Playlist = z.infer<typeof PlaylistSchema>;
 // PlaylistTrack (junction)
 export type PlaylistTrackCreate = z.infer<typeof PlaylistTrackCreateSchema>;
 export type PlaylistTrack = z.infer<typeof PlaylistTrackSchema>;
+export type PlaylistTrackUpdate = z.infer<typeof PlaylistTrackUpdateSchema>;
 
 // Simple Queries
 export type SimpleQuery1 = z.infer<typeof simpleQuery1Schema>;

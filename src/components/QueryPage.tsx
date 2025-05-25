@@ -12,6 +12,7 @@ interface QueryPageProps<
   Schema extends ZodObject<ZodRawShape>
 > {
   title: string;
+  description?: string;
   queryKeyBase: string;
   fetchFn: (params: z.infer<ParamsSchema>) => Promise<z.infer<Schema>[]>;
   paramsSchema: ParamsSchema;
@@ -24,6 +25,7 @@ export function QueryPage<
   DataSchema extends ZodObject<ZodRawShape>
 >({
   title,
+  description,
   queryKeyBase,
   fetchFn,
   paramsSchema,
@@ -35,15 +37,17 @@ export function QueryPage<
 
   return (
     <>
+      <div className="space-y-2 mb-4">
+        <h1 className="text-xl font-bold">{title}</h1>
+        <p>{description}</p>
+      </div>
       <QueryParamsForm
         schema={paramsSchema}
         defaultValues={params as DefaultValues<z.infer<ParamsSchema>>}
         submitFn={setParams}
         queryKey={queryKey}
       />
-
       <TablePage
-        title={title}
         schema={schema}
         queryKey={queryKey}
         fetchFn={() => fetchFn(params)}

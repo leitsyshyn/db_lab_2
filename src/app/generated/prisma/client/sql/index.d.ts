@@ -1,3 +1,5 @@
+export { $DbEnums } from "./$DbEnums"
+
 export * from "./setComparisonQuery1"
 
 export * from "./setComparisonQuery2"

@@ -15,7 +15,8 @@ export interface TablePageProps<
   CreateSchema extends ZodObject<ZodRawShape>,
   UpdateSchema extends ZodObject<ZodRawShape>
 > {
-  title: string;
+  title?: string;
+  item?: string;
   queryKey: QueryKey;
   fetchFn: () => Promise<z.infer<Schema>[]>;
   schema: Schema;
@@ -32,6 +33,7 @@ export function TablePage<
 >(props: TablePageProps<Schema, CreateSchema, UpdateSchema>) {
   const {
     title,
+    item,
     queryKey,
     fetchFn,
     schema,
@@ -66,47 +68,55 @@ export function TablePage<
   const invalidate = () => queryClient.invalidateQueries({ queryKey });
 
   const overrides: Record<string, Partial<ColumnDef<T>>> = {};
-  if (updateFn) {
-    overrides.edit = {
-      id: "edit",
-      cell: ({ row }: { row: { original: T } }) => (
-        <ActionDialog
-          title={`Edit ${title}`}
-          schema={updateSchema}
-          defaultValues={row.original as DefaultValues<UpdateT>}
-          queryKey={queryKey}
-          submitFn={async (values: UpdateT) => {
-            await updateFn(row.original.id, values);
-            invalidate();
-          }}
-        />
-      ),
-    };
-  }
-  if (deleteFn) {
-    overrides.delete = {
-      id: "delete",
-      cell: ({ row }: { row: { original: T } }) => (
-        <DeleteButton
-          title={title}
-          id={row.original.id}
-          queryKey={queryKey}
-          deleteFn={async (id: string) => {
-            await deleteFn(id);
-            invalidate();
-          }}
-        />
-      ),
+  if (item) {
+    overrides.actions = {
+      id: "actions",
+      cell: ({ row }: { row: { original: T } }) => {
+        return (
+          <div className="space-x-2">
+            {updateFn && (
+              <ActionDialog
+                action="Edit"
+                item={item}
+                schema={updateSchema}
+                defaultValues={row.original as DefaultValues<UpdateT>}
+                queryKey={queryKey}
+                submitFn={async (values: UpdateT) => {
+                  if (updateFn) {
+                    await updateFn(row.original.id, values);
+                    invalidate();
+                  }
+                }}
+              />
+            )}
+            {deleteFn && (
+              <DeleteButton
+                item={item}
+                id={row.original.id}
+                queryKey={queryKey}
+                deleteFn={async (id: string) => {
+                  await deleteFn(id);
+                  invalidate();
+                }}
+              />
+            )}
+          </div>
+        );
+      },
     };
   }
 
   const cols = columnsFromSchema(schema, overrides);
 
   return (
-    <div>
-      {createFn && (
+    <div className="space-y-8">
+      <div className="space-y-2 mb-4">
+        <h1 className="text-xl font-bold">{title}</h1>
+      </div>
+      {item && createFn && (
         <ActionDialog
-          title={`Create ${title}`}
+          action="Create"
+          item={item}
           schema={createSchema}
           defaultValues={{} as DefaultValues<CreateT>}
           queryKey={queryKey}

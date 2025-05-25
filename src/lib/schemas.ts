@@ -1,14 +1,16 @@
+import { Country } from "@/app/generated/prisma/client";
 import { z } from "zod";
 
 // Reusable primitives
 const id = z.string().uuid();
 const date = z.coerce.date().optional();
 const requiredString = z.string().min(1).max(255);
+const country = z.nativeEnum(Country);
 
 // Artist
 export const ArtistCreateSchema = z.object({
   name: requiredString,
-  country: z.string().optional(),
+  country: country.optional(),
   bio: z.string().optional(),
   image: z.string().url().optional(),
 });
@@ -61,6 +63,7 @@ export const TrackGenreCreateSchema = z.object({
   genreId: id,
 });
 export const TrackGenreSchema = TrackGenreCreateSchema;
+export const TrackGenreUpdateSchema = TrackGenreCreateSchema.partial();
 
 // User
 export const UserCreateSchema = z.object({
@@ -98,6 +101,7 @@ export const PlaylistTrackCreateSchema = z.object({
 export const PlaylistTrackSchema = PlaylistTrackCreateSchema.extend({
   createdAt: date,
 });
+export const PlaylistTrackUpdateSchema = PlaylistTrackCreateSchema.partial();
 
 // Simple Queries
 export const simpleQuery1Schema = AlbumSchema;
@@ -110,8 +114,8 @@ export const simpleQuery5Schema = TrackSchema;
 export const setComparisonQuery1Schema = PlaylistSchema;
 export const setComparisonQuery2Schema = UserSchema;
 export const setComparisonQuery3Schema = z.object({
-  name1: requiredString,
-  name2: requiredString,
+  firstArtistName: requiredString,
+  secondArtistName: requiredString,
 });
 
 // Simple Query Params
@@ -125,7 +129,7 @@ export const simpleQuery3ParamsSchema = z.object({
   minGenreCount: z.coerce.number().int().positive(),
 });
 export const simpleQuery4ParamsSchema = z.object({
-  country: z.string(),
+  country: country,
 });
 export const simpleQuery5ParamsSchema = z.object({
   genreName: z.string(),
@@ -140,6 +144,5 @@ export const setComparisonQuery2ParamsSchema = z.object({
   albumName: requiredString,
 });
 export const setComparisonQuery3ParamsSchema = z.object({
-  name1: requiredString,
-  name2: requiredString,
+  minDate: z.coerce.date(),
 });

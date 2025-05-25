@@ -3,4 +3,4 @@
 /* eslint-disable */
 "use strict"
 const { makeTypedQueryFactory: $mkFactory } = require("../runtime/edge.js")
-exports.simpleQuery4 = /*#__PURE__*/ $mkFactory("\nSELECT DISTINCT\nu.*\nFROM \"User\" u\nJOIN \"Playlist\" p\nON p.\"userId\" = u.\"id\"\nJOIN \"PlaylistTrack\" pt\nON pt.\"playlistId\" = p.\"id\"\nJOIN \"Track\" t\nON t.\"id\" = pt.\"trackId\"\nJOIN \"Album\" al\nON al.\"id\" = t.\"albumId\"\nJOIN \"Artist\" ar\nON ar.\"id\" = al.\"artistId\"\nWHERE ar.\"country\" = $1;")
+exports.simpleQuery4 = /*#__PURE__*/ $mkFactory("\nSELECT DISTINCT\nu.*\nFROM \"User\" u\nJOIN \"Playlist\" p\nON p.\"userId\" = u.id\nJOIN \"PlaylistTrack\" pt\nON pt.\"playlistId\" = p.id\nJOIN \"Track\" t\nON t.id = pt.\"trackId\"\nJOIN \"Album\" al\nON al.id = t.\"albumId\"\nJOIN \"Artist\" ar\nON ar.id = al.\"artistId\"\nWHERE ar.\"country\" = CAST($1 AS \"Country\");")

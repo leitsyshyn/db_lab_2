@@ -1,47 +1,40 @@
-WITH given_users AS (
-  SELECT DISTINCT
-    u."id" AS user_id
-  FROM "Artist" AS ar
-  JOIN "Album" AS al    ON al."artistId"    = ar."id"
-  JOIN "Track" AS t     ON t."albumId"      = al."id"
-  JOIN "PlaylistTrack" AS pt ON pt."trackId" = t."id"
-  JOIN "Playlist" AS p  ON p."id"           = pt."playlistId"
-  JOIN "User" AS u      ON u."id"           = p."userId"
-  WHERE ar."name" = $1
-),
-artist_users AS (
-  SELECT DISTINCT
-    ar."id" AS artist_id,
-    u."id" AS user_id
-  FROM "Artist" AS ar
-  JOIN "Album" AS al    ON al."artistId"    = ar."id"
-  JOIN "Track" AS t     ON t."albumId"      = al."id"
-  JOIN "PlaylistTrack" AS pt ON pt."trackId" = t."id"
-  JOIN "Playlist" AS p  ON p."id"           = pt."playlistId"
-  JOIN "User" AS u      ON u."id"           = p."userId"
+WITH artist_user AS (
+
+    SELECT DISTINCT
+           a.id        AS artist_id,
+           pl."userId" AS user_id
+    FROM   "Artist"        a
+    JOIN   "Album"         al ON al."artistId" = a.id
+    JOIN   "Track"         t  ON t."albumId"   = al.id
+    JOIN   "PlaylistTrack" pt ON pt."trackId"  = t.id
+    JOIN   "Playlist"      pl ON pl.id         = pt."playlistId"
+    WHERE pl."createdAt" >= $1
 )
-SELECT DISTINCT
-  a.*
-FROM "Artist" AS a
-WHERE a."name" <> $1
-  AND NOT EXISTS (
-    SELECT 1
-    FROM given_users AS gu
-    WHERE NOT EXISTS (
-      SELECT 1
-      FROM artist_users AS au
-      WHERE au."artist_id" = a."id"
-        AND au."user_id"   = gu.user_id
-    )
-  )
-  AND NOT EXISTS (
-    SELECT 1
-    FROM artist_users AS au2
-    WHERE au2."artist_id" = a."id"
-      AND NOT EXISTS (
-        SELECT 1
-        FROM given_users AS gu2
-        WHERE gu2.user_id = au2.user_id
-      )
-  )
-ORDER BY a."name";
+SELECT
+    ar1.name AS "firstArtistName",
+    ar2.name AS "secondArtistName"
+FROM   "Artist" ar1
+JOIN   "Artist" ar2
+       ON ar1.id < ar2.id                 
+WHERE  NOT EXISTS (                       
+          SELECT 1
+          FROM   artist_user au1
+          WHERE  au1.artist_id = ar1.id
+            AND  NOT EXISTS (
+                   SELECT 1
+                   FROM   artist_user au2
+                   WHERE  au2.artist_id = ar2.id
+                     AND  au2.user_id   = au1.user_id
+                 )
+       )
+  AND  NOT EXISTS (                     
+          SELECT 1
+          FROM   artist_user au2
+          WHERE  au2.artist_id = ar2.id
+            AND  NOT EXISTS (
+                   SELECT 1
+                   FROM   artist_user au1
+                   WHERE  au1.artist_id = ar1.id
+                     AND  au1.user_id   = au2.user_id
+                 )
+       );

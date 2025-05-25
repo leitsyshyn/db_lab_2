@@ -15,7 +15,8 @@ export async function GET(request: Request) {
       return Response.json({ error: "No users found" }, { status: 404 });
     }
     return Response.json(users);
-  } catch {
+  } catch (e) {
+    console.error("Error fetching users:", e);
     return Response.json({ error: "Failed to fetch users" }, { status: 500 });
   }
 }

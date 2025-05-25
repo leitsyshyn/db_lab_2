@@ -1,5 +1,5 @@
 // prisma/seed.ts
-import { PrismaClient } from "../src/app/generated/prisma/client";
+import { Country, PrismaClient } from "../src/app/generated/prisma/client";
 import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
@@ -50,7 +50,7 @@ async function main() {
     const artist = await prisma.artist.create({
       data: {
         name: faker.person.fullName(),
-        country: faker.location.country(),
+        country: faker.location.countryCode("alpha-2") as Country,
         bio: faker.lorem.paragraph(),
         image: faker.image.urlPicsumPhotos({ width: 400, height: 400 }),
         createdAt,

@@ -3,4 +3,4 @@
 /* eslint-disable */
 "use strict"
 const { makeTypedQueryFactory: $mkFactory } = require("../runtime/edge.js")
-exports.simpleQuery1 = /*#__PURE__*/ $mkFactory("\nSELECT\na.*\nFROM \"Album\" a\nJOIN \"Track\" t\nON t.\"albumId\" = a.\"id\"\nGROUP BY a.id\nHAVING COUNT(t.id) > $1;")
+exports.simpleQuery1 = /*#__PURE__*/ $mkFactory("\nSELECT\na.*\nFROM \"Album\" a\nJOIN \"Track\" t\nON t.\"albumId\" = a.id\nGROUP BY a.id\nHAVING COUNT(t.id) > $1;")

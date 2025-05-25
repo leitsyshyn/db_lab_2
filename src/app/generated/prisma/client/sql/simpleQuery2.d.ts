@@ -1,4 +1,5 @@
 import * as $runtime from "../runtime/library"
+import { $DbEnums } from "./$DbEnums"
 
 /**
  * @param timestamp
@@ -10,10 +11,10 @@ export namespace simpleQuery2 {
   export type Result = {
     id: string
     name: string
-    country: string | null
     bio: string | null
     createdAt: Date
     image: string | null
     updatedAt: Date
+    country: $DbEnums.Country | null
   }
 }

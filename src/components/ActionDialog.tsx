@@ -26,10 +26,11 @@ import { useState } from "react";
 import { z, ZodObject, ZodRawShape } from "zod";
 import { QueryKey, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { Pencil } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 
 interface ActionDialogProps<Schema extends ZodObject<ZodRawShape>> {
-  title?: string;
+  action: string;
+  item: string;
   schema: Schema;
   defaultValues: DefaultValues<z.infer<Schema>>;
   queryKey: QueryKey;
@@ -37,7 +38,8 @@ interface ActionDialogProps<Schema extends ZodObject<ZodRawShape>> {
 }
 
 export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
-  title = "Create",
+  action,
+  item,
   schema,
   defaultValues,
   queryKey,
@@ -57,13 +59,16 @@ export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
     mutationFn: submitFn,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey });
-      toast.success(`${title} successfully!`);
+      toast.success(`${item} ${action} successfull!`);
       setOpen(false);
       form.reset();
     },
     onError: (error) => {
-      toast.error(`Error ${title.toLowerCase()}`);
-      console.error(`Error ${title.toLowerCase()}:`, error);
+      toast.error(`Failed to ${action.toLowerCase()} ${item.toLowerCase()}`);
+      console.error(
+        `Failed to ${action.toLowerCase()} ${item.toLowerCase()}:`,
+        error
+      );
     },
   });
 
@@ -74,15 +79,24 @@ export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="icon" variant="default" disabled={mutation.isPending}>
-          <Pencil />
-        </Button>
+        {action === "Create" ? (
+          <Button className="w-full" disabled={mutation.isPending}>
+            <Plus /> Create new {item}
+          </Button>
+        ) : action === "Edit" ? (
+          <Button variant="secondary" size="icon" disabled={mutation.isPending}>
+            <Pencil />
+          </Button>
+        ) : null}
       </DialogTrigger>
       <DialogContent onCloseAutoFocus={() => form.reset()}>
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle>
+            {action} {item}
+          </DialogTitle>
           <DialogDescription>
-            Please fill out the form below to {title.toLowerCase()}.
+            Please fill out the form below to {action.toLowerCase()}{" "}
+            {item.toLowerCase()}.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>

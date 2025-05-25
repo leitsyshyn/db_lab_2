@@ -1,19 +1,14 @@
 import * as $runtime from "../runtime/library"
 
 /**
- * @param text
+ * @param timestamp
  */
-export const setComparisonQuery3: (text: string) => $runtime.TypedSql<setComparisonQuery3.Parameters, setComparisonQuery3.Result>
+export const setComparisonQuery3: (timestamp: Date) => $runtime.TypedSql<setComparisonQuery3.Parameters, setComparisonQuery3.Result>
 
 export namespace setComparisonQuery3 {
-  export type Parameters = [text: string]
+  export type Parameters = [timestamp: Date]
   export type Result = {
-    id: string
-    name: string
-    country: string | null
-    bio: string | null
-    createdAt: Date
-    image: string | null
-    updatedAt: Date
+    firstArtistName: string
+    secondArtistName: string
   }
 }
