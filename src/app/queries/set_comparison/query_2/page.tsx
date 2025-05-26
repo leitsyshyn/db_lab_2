@@ -14,7 +14,7 @@ export default function Page() {
       schema={setComparisonQuery2Schema}
       queryKeyBase={"setComparisonQuery2"}
       initialParams={{
-        albumName: "cresco canto ubi vulariter",
+        albumName: "trepide audio vae valetudo",
       }}
       fetchFn={fetchSetComparisonQuery2}
       paramsSchema={setComparisonQuery2ParamsSchema}

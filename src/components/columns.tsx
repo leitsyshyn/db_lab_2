@@ -2,8 +2,17 @@
 
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown, MoveDown, MoveUp } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import { ZodObject, ZodRawShape, z } from "zod";
+
+import "@tanstack/react-table";
+
+declare module "@tanstack/react-table" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface ColumnMeta<TData, TValue> {
+    label?: string;
+  }
+}
 
 export function columnsFromSchema<Schema extends ZodObject<ZodRawShape>>(
   schema: Schema,
@@ -15,15 +24,18 @@ export function columnsFromSchema<Schema extends ZodObject<ZodRawShape>>(
 
   const accessorCols: ColumnDef<Row>[] = shapeKeys.map((field) => ({
     accessorKey: field,
+    meta: {
+      label: schema.shape[field as string]?.description ?? (field as string),
+    },
     header: ({ column }) => {
       return (
         <Button variant={"ghost"} onClick={column.getToggleSortingHandler()}>
           {schema.shape[field as string]?.description ?? (field as string)}
 
           {column.getIsSorted() === "asc" ? (
-            <MoveUp />
+            <ArrowUp />
           ) : column.getIsSorted() === "desc" ? (
-            <MoveDown />
+            <ArrowDown />
           ) : (
             <ArrowUpDown />
           )}

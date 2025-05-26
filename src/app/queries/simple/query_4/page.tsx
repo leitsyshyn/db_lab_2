@@ -13,7 +13,7 @@ export default function Page() {
       fetchFn={fetchSimpleQuery4}
       paramsSchema={simpleQuery4ParamsSchema}
       initialParams={{
-        country: "UA",
+        countryId: "b402882d-a105-4124-8580-532f77b1d682",
       }}
     />
   );

@@ -7,7 +7,12 @@ WITH target_tracks AS (
 SELECT DISTINCT u.*
 FROM "User" u
 JOIN "Playlist" p ON p."userId" = u.id
-WHERE NOT EXISTS (
+WHERE 
+    EXISTS (
+    SELECT 1
+    FROM target_tracks
+  ) AND
+ NOT EXISTS (
   SELECT 1
   FROM target_tracks tt
   WHERE NOT EXISTS (
@@ -16,4 +21,4 @@ WHERE NOT EXISTS (
     WHERE pt."playlistId" = p.id
       AND pt."trackId"    = tt.id
   )
-);
+) ;

@@ -1,18 +1,18 @@
-import { Country } from "@/app/generated/prisma/client";
 import { z } from "zod";
 
 // Reusable primitives
 const id = z.string().uuid();
 const date = z.coerce.date().optional();
 const requiredString = z.string().min(1).max(255);
-const country = z.nativeEnum(Country);
+const countryId = z.string().uuid();
+const validUrl = z.string().url().or(z.literal(""));
 
 // Artist
 export const ArtistCreateSchema = z.object({
   name: requiredString,
-  country: country.optional(),
+  countryId: countryId.optional(),
   bio: z.string().optional(),
-  image: z.string().url().optional(),
+  image: validUrl.optional(),
 });
 export const ArtistUpdateSchema = ArtistCreateSchema.partial();
 export const ArtistSchema = ArtistCreateSchema.extend({
@@ -24,7 +24,7 @@ export const ArtistSchema = ArtistCreateSchema.extend({
 // Album
 export const AlbumCreateSchema = z.object({
   title: requiredString,
-  image: z.string().url().optional(),
+  image: validUrl.optional(),
   artistId: id,
 });
 export const AlbumUpdateSchema = AlbumCreateSchema.partial();
@@ -57,6 +57,18 @@ export const GenreSchema = GenreCreateSchema.extend({
   id,
 });
 
+// Country
+export const CountryCreateSchema = z.object({
+  name: requiredString,
+  code: z.string().length(2).toUpperCase(),
+});
+export const CountryUpdateSchema = CountryCreateSchema.partial();
+export const CountrySchema = CountryCreateSchema.extend({
+  id,
+  createdAt: date,
+  updatedAt: date,
+});
+
 // TrackGenre (junction)
 export const TrackGenreCreateSchema = z.object({
   trackId: id,
@@ -71,7 +83,7 @@ export const UserCreateSchema = z.object({
   email: z.string().email(),
   password: requiredString,
   bio: z.string().optional(),
-  image: z.string().url().optional(),
+  image: validUrl.optional(),
 });
 export const UserUpdateSchema = UserCreateSchema.partial();
 export const UserSchema = UserCreateSchema.extend({
@@ -129,10 +141,10 @@ export const simpleQuery3ParamsSchema = z.object({
   minGenreCount: z.coerce.number().int().positive(),
 });
 export const simpleQuery4ParamsSchema = z.object({
-  country: country,
+  countryId: countryId,
 });
 export const simpleQuery5ParamsSchema = z.object({
-  genreName: z.string(),
+  genreName: requiredString,
   minTrackDuration: z.coerce.number().int().positive(),
 });
 

@@ -3,4 +3,4 @@
 /* eslint-disable */
 "use strict"
 const { makeTypedQueryFactory: $mkFactory } = require("../runtime/edge.js")
-exports.setComparisonQuery2 = /*#__PURE__*/ $mkFactory("WITH target_tracks AS (\nSELECT t.id\nFROM \"Track\" t\nJOIN \"Album\" al ON t.\"albumId\" = al.id\nWHERE al.title = $1\n)\nSELECT DISTINCT u.*\nFROM \"User\" u\nJOIN \"Playlist\" p ON p.\"userId\" = u.id\nWHERE NOT EXISTS (\nSELECT 1\nFROM target_tracks tt\nWHERE NOT EXISTS (\nSELECT 1\nFROM \"PlaylistTrack\" pt\nWHERE pt.\"playlistId\" = p.id\nAND pt.\"trackId\"    = tt.id\n)\n);")
+exports.setComparisonQuery2 = /*#__PURE__*/ $mkFactory("WITH target_tracks AS (\nSELECT t.id\nFROM \"Track\" t\nJOIN \"Album\" al ON t.\"albumId\" = al.id\nWHERE al.title = $1\n)\nSELECT DISTINCT u.*\nFROM \"User\" u\nJOIN \"Playlist\" p ON p.\"userId\" = u.id\nWHERE\nEXISTS (\nSELECT 1\nFROM target_tracks\n) AND\nNOT EXISTS (\nSELECT 1\nFROM target_tracks tt\nWHERE NOT EXISTS (\nSELECT 1\nFROM \"PlaylistTrack\" pt\nWHERE pt.\"playlistId\" = p.id\nAND pt.\"trackId\"    = tt.id\n)\n) ;")

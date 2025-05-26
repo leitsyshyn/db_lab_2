@@ -9,8 +9,9 @@ import { z, ZodObject, ZodRawShape } from "zod";
 import React from "react";
 import { DefaultValues } from "react-hook-form";
 import { ColumnDef } from "@tanstack/react-table";
+import { Loader2 } from "lucide-react";
 
-export interface TablePageProps<
+export interface SchemaTableProps<
   Schema extends ZodObject<ZodRawShape>,
   CreateSchema extends ZodObject<ZodRawShape>,
   UpdateSchema extends ZodObject<ZodRawShape>
@@ -26,11 +27,11 @@ export interface TablePageProps<
   updateFn?: (id: string, values: z.infer<UpdateSchema>) => Promise<void>;
   deleteFn?: (id: string) => Promise<void>;
 }
-export function TablePage<
+export function SchemaTable<
   Schema extends ZodObject<ZodRawShape>,
   CreateSchema extends ZodObject<ZodRawShape> = ZodObject<Schema["shape"]>,
   UpdateSchema extends ZodObject<ZodRawShape> = ZodObject<Schema["shape"]>
->(props: TablePageProps<Schema, CreateSchema, UpdateSchema>) {
+>(props: SchemaTableProps<Schema, CreateSchema, UpdateSchema>) {
   const {
     title,
     item,
@@ -109,10 +110,8 @@ export function TablePage<
   const cols = columnsFromSchema(schema, overrides);
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-2 mb-4">
-        <h1 className="text-xl font-bold">{title}</h1>
-      </div>
+    <div className="space-y-4">
+      <h1 className="text-xl font-bold">{title}</h1>
       {item && createFn && (
         <ActionDialog
           action="Create"
@@ -127,11 +126,19 @@ export function TablePage<
         />
       )}
 
-      {isLoading && <div>Loading…</div>}
-      {isError && <div>Error: {error!.message}</div>}
+      {isLoading && (
+        <div className="w-full flex justify-center h-12 p-2">
+          <Loader2 className="animate-spin size-8" />
+        </div>
+      )}
+      {isError && (
+        <div className="w-full flex justify-center h-12 p-2">
+          Error: {error!.message}
+        </div>
+      )}
       {data && <DataTable columns={cols} data={data} />}
     </div>
   );
 }
 
-export default TablePage;
+export default SchemaTable;

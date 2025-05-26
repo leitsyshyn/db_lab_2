@@ -6,6 +6,7 @@ import {
   DefaultValues,
   Path,
   ControllerRenderProps,
+  UseFormReturn,
 } from "react-hook-form";
 import {
   Form,
@@ -17,7 +18,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
 import { Combobox, Option } from "@/components/ui/combobox";
 import {
   z,
@@ -28,22 +28,23 @@ import {
   ZodEffects,
   ZodFirstPartyTypeKind,
 } from "zod";
-import { QueryKey, useQueryClient } from "@tanstack/react-query";
 import { DatePicker } from "@/components/ui/date-picker";
-import { getCountryName } from "@/lib/utils";
-import { Play } from "lucide-react";
+import { cn, getCountryName } from "@/lib/utils";
+import { useFieldOptions } from "@/contexts/FieldOptionsContext";
 interface QueryParamsFormProps<Schema extends ZodObject<ZodRawShape>> {
   schema: Schema;
   defaultValues: DefaultValues<z.infer<Schema>>;
-  queryKey: QueryKey;
-  submitFn: (values: z.infer<Schema>) => void;
+  onSubmit: (values: z.infer<Schema>) => void;
+  renderSubmit: (form: UseFormReturn<z.infer<Schema>>) => React.ReactNode;
+  className?: string;
 }
 
-export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
+export function SchemaForm<Schema extends ZodObject<ZodRawShape>>({
   schema,
   defaultValues,
-  queryKey,
-  submitFn,
+  onSubmit,
+  renderSubmit,
+  className,
 }: QueryParamsFormProps<Schema>) {
   type FormValues = z.infer<Schema>;
 
@@ -53,7 +54,7 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
     mode: "onTouched",
   });
 
-  const queryClient = useQueryClient();
+  const fieldOptions = useFieldOptions();
 
   function unwrapSchema<T extends ZodTypeAny>(s: T): ZodTypeAny {
     if (s instanceof ZodOptional) {
@@ -66,9 +67,21 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
   }
 
   function renderInput<Name extends Path<FormValues>>(
+    key: string,
     fieldSchema: ZodTypeAny,
     field: ControllerRenderProps<FormValues, Name>
   ): React.ReactNode {
+    if (key.endsWith("Id") && fieldOptions?.[key]) {
+      return (
+        <Combobox
+          ref={field.ref}
+          options={fieldOptions[key]!}
+          value={field.value as string}
+          onChange={field.onChange}
+        />
+      );
+    }
+
     const core = unwrapSchema(fieldSchema);
     const kind = core._def.typeName as ZodFirstPartyTypeKind;
 
@@ -94,7 +107,7 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
       }
 
       case ZodFirstPartyTypeKind.ZodNumber:
-        return <Input type="number" {...field} />;
+        return <Input type="number" {...field} value={field.value ?? ""} />;
 
       case ZodFirstPartyTypeKind.ZodBoolean:
         return (
@@ -110,20 +123,15 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
         );
 
       default:
-        return <Input {...field} />;
+        return <Input {...field} value={field.value ?? ""} />;
     }
   }
-
-  const onSubmit = (data: FormValues) => {
-    submitFn(data);
-    queryClient.invalidateQueries({ queryKey });
-  };
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex justify-between items-end space-y-4 gap-4"
+        className={cn(className, "space-y-4")}
       >
         {Object.entries(schema.shape).map(([key, fieldSchema]) => (
           <FormField
@@ -133,21 +141,17 @@ export function QueryParamsForm<Schema extends ZodObject<ZodRawShape>>({
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormLabel>{key}</FormLabel>
-                <FormControl>{renderInput(fieldSchema, field)}</FormControl>
+                <div className="flex justify-between gap-4 items-center">
+                  <FormControl>
+                    {renderInput(key, fieldSchema, field)}
+                  </FormControl>
+                </div>
                 <FormMessage />
               </FormItem>
             )}
           />
         ))}
-
-        <Button
-          type="submit"
-          className="mb-4"
-          disabled={!form.formState.isValid || form.formState.isSubmitting}
-        >
-          <Play />
-          Execute
-        </Button>
+        {renderSubmit(form)}
       </form>
     </Form>
   );

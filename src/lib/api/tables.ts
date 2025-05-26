@@ -1,6 +1,7 @@
 import {
   Album,
   Artist,
+  Country,
   Genre,
   Playlist,
   PlaylistTrack,
@@ -40,6 +41,11 @@ export async function fetchTracks(): Promise<Track[]> {
 export async function fetchUsers(): Promise<User[]> {
   const res = await fetch("/api/tables/users");
   if (!res.ok) throw new Error("Failed to fetch users");
+  return await res.json();
+}
+export async function fetchCountries(): Promise<Country[]> {
+  const res = await fetch("/api/tables/countries");
+  if (!res.ok) throw new Error("Failed to fetch countries");
   return await res.json();
 }
 

@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <QueryPage
       title="Simple Query 3"
-      description="Find playlists which have tracks from albums which have tracks of at least X genres."
+      description="Find playlists which have tracks of at least X genres."
       schema={simpleQuery3Schema}
       queryKeyBase="simpleQuery3"
       fetchFn={fetchSimpleQuery3}

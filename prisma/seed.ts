@@ -1,5 +1,5 @@
 // prisma/seed.ts
-import { Country, PrismaClient } from "../src/app/generated/prisma/client";
+import { PrismaClient } from "../src/app/generated/prisma/client";
 import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
@@ -44,20 +44,32 @@ async function main() {
 
   // --- Seed artists, albums, tracks ---
   for (let i = 0; i < NUM_ARTISTS; i++) {
+    // generate random timestamps
     const createdAt = faker.date.between({ from: "1970-01-01", to: now });
     const updatedAt = faker.date.between({ from: createdAt, to: now });
 
+    // pick a random ISO country code and name
+    const countryCode = faker.location.countryCode("alpha-2");
+    const countryName = faker.location.country();
+
+    // create artist and connect (or create) its country
     const artist = await prisma.artist.create({
       data: {
         name: faker.person.fullName(),
-        country: faker.location.countryCode("alpha-2") as Country,
         bio: faker.lorem.paragraph(),
         image: faker.image.urlPicsumPhotos({ width: 400, height: 400 }),
         createdAt,
         updatedAt,
+        country: {
+          connectOrCreate: {
+            where: { code: countryCode }, // unique by code
+            create: { code: countryCode, name: countryName },
+          },
+        },
       },
     });
 
+    // how many albums this artist has
     const numAlbums = faker.number.int({
       min: MIN_ALBUMS_PER_ARTIST,
       max: MAX_ALBUMS_PER_ARTIST,
@@ -77,6 +89,7 @@ async function main() {
         },
       });
 
+      // how many tracks this album has
       const numTracks = faker.number.int({
         min: MIN_TRACKS_PER_ALBUM,
         max: MAX_TRACKS_PER_ALBUM,
@@ -92,7 +105,7 @@ async function main() {
           to: now,
         });
 
-        // Pick 1–3 genres per track
+        // assign 1–3 random genres
         const genreCount = faker.number.int({ min: 1, max: 3 });
         const uniqueGenreIds = faker.helpers.arrayElements(
           genreIds,

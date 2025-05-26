@@ -5,12 +5,12 @@ import {
   deleteGenre,
   updateGenre,
 } from "@/app/tables/model/genres/actions";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 import { fetchGenres } from "@/lib/api/tables";
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="Genres Table"
       item="Genre"
       schema={GenreSchema}

@@ -1,6 +1,6 @@
 "use client";
 import { UserSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 import { fetchUsers } from "@/lib/api/tables";
 import {
   createUser,
@@ -10,7 +10,7 @@ import {
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="Users Table"
       item="User"
       schema={UserSchema}

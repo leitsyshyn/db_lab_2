@@ -53,270 +53,11 @@ export type Playlist = $Result.DefaultSelection<Prisma.$PlaylistPayload>
  * 
  */
 export type PlaylistTrack = $Result.DefaultSelection<Prisma.$PlaylistTrackPayload>
-
 /**
- * Enums
+ * Model Country
+ * 
  */
-export namespace $Enums {
-  export const Country: {
-  AF: 'AF',
-  AX: 'AX',
-  AL: 'AL',
-  DZ: 'DZ',
-  AS: 'AS',
-  AD: 'AD',
-  AO: 'AO',
-  AI: 'AI',
-  AQ: 'AQ',
-  AG: 'AG',
-  AR: 'AR',
-  AM: 'AM',
-  AW: 'AW',
-  AU: 'AU',
-  AT: 'AT',
-  AZ: 'AZ',
-  BS: 'BS',
-  BH: 'BH',
-  BD: 'BD',
-  BB: 'BB',
-  BY: 'BY',
-  BE: 'BE',
-  BZ: 'BZ',
-  BJ: 'BJ',
-  BM: 'BM',
-  BT: 'BT',
-  BO: 'BO',
-  BQ: 'BQ',
-  BA: 'BA',
-  BW: 'BW',
-  BV: 'BV',
-  BR: 'BR',
-  IO: 'IO',
-  BN: 'BN',
-  BG: 'BG',
-  BF: 'BF',
-  BI: 'BI',
-  CV: 'CV',
-  KH: 'KH',
-  CM: 'CM',
-  CA: 'CA',
-  KY: 'KY',
-  CF: 'CF',
-  TD: 'TD',
-  CL: 'CL',
-  CN: 'CN',
-  CX: 'CX',
-  CC: 'CC',
-  CO: 'CO',
-  KM: 'KM',
-  CG: 'CG',
-  CD: 'CD',
-  CK: 'CK',
-  CR: 'CR',
-  CI: 'CI',
-  HR: 'HR',
-  CU: 'CU',
-  CW: 'CW',
-  CY: 'CY',
-  CZ: 'CZ',
-  DK: 'DK',
-  DJ: 'DJ',
-  DM: 'DM',
-  DO: 'DO',
-  EC: 'EC',
-  EG: 'EG',
-  SV: 'SV',
-  GQ: 'GQ',
-  ER: 'ER',
-  EE: 'EE',
-  SZ: 'SZ',
-  ET: 'ET',
-  FK: 'FK',
-  FO: 'FO',
-  FJ: 'FJ',
-  FI: 'FI',
-  FR: 'FR',
-  GF: 'GF',
-  PF: 'PF',
-  TF: 'TF',
-  GA: 'GA',
-  GM: 'GM',
-  GE: 'GE',
-  DE: 'DE',
-  GH: 'GH',
-  GI: 'GI',
-  GR: 'GR',
-  GL: 'GL',
-  GD: 'GD',
-  GP: 'GP',
-  GU: 'GU',
-  GT: 'GT',
-  GG: 'GG',
-  GN: 'GN',
-  GW: 'GW',
-  GY: 'GY',
-  HT: 'HT',
-  HM: 'HM',
-  VA: 'VA',
-  HN: 'HN',
-  HK: 'HK',
-  HU: 'HU',
-  IS: 'IS',
-  IN: 'IN',
-  ID: 'ID',
-  IR: 'IR',
-  IQ: 'IQ',
-  IE: 'IE',
-  IM: 'IM',
-  IL: 'IL',
-  IT: 'IT',
-  JM: 'JM',
-  JP: 'JP',
-  JE: 'JE',
-  JO: 'JO',
-  KZ: 'KZ',
-  KE: 'KE',
-  KI: 'KI',
-  KP: 'KP',
-  KR: 'KR',
-  KW: 'KW',
-  KG: 'KG',
-  LA: 'LA',
-  LV: 'LV',
-  LB: 'LB',
-  LS: 'LS',
-  LR: 'LR',
-  LY: 'LY',
-  LI: 'LI',
-  LT: 'LT',
-  LU: 'LU',
-  MO: 'MO',
-  MG: 'MG',
-  MW: 'MW',
-  MY: 'MY',
-  MV: 'MV',
-  ML: 'ML',
-  MT: 'MT',
-  MH: 'MH',
-  MQ: 'MQ',
-  MR: 'MR',
-  MU: 'MU',
-  YT: 'YT',
-  MX: 'MX',
-  FM: 'FM',
-  MD: 'MD',
-  MC: 'MC',
-  MN: 'MN',
-  ME: 'ME',
-  MS: 'MS',
-  MA: 'MA',
-  MZ: 'MZ',
-  MM: 'MM',
-  NA: 'NA',
-  NR: 'NR',
-  NP: 'NP',
-  NL: 'NL',
-  NC: 'NC',
-  NZ: 'NZ',
-  NI: 'NI',
-  NE: 'NE',
-  NG: 'NG',
-  NU: 'NU',
-  NF: 'NF',
-  MK: 'MK',
-  MP: 'MP',
-  NO: 'NO',
-  OM: 'OM',
-  PK: 'PK',
-  PW: 'PW',
-  PS: 'PS',
-  PA: 'PA',
-  PG: 'PG',
-  PY: 'PY',
-  PE: 'PE',
-  PH: 'PH',
-  PN: 'PN',
-  PL: 'PL',
-  PT: 'PT',
-  PR: 'PR',
-  QA: 'QA',
-  RE: 'RE',
-  RO: 'RO',
-  RU: 'RU',
-  RW: 'RW',
-  BL: 'BL',
-  SH: 'SH',
-  KN: 'KN',
-  LC: 'LC',
-  MF: 'MF',
-  PM: 'PM',
-  VC: 'VC',
-  WS: 'WS',
-  SM: 'SM',
-  ST: 'ST',
-  SA: 'SA',
-  SN: 'SN',
-  RS: 'RS',
-  SC: 'SC',
-  SL: 'SL',
-  SG: 'SG',
-  SX: 'SX',
-  SK: 'SK',
-  SI: 'SI',
-  SB: 'SB',
-  SO: 'SO',
-  ZA: 'ZA',
-  GS: 'GS',
-  SS: 'SS',
-  ES: 'ES',
-  LK: 'LK',
-  SD: 'SD',
-  SR: 'SR',
-  SJ: 'SJ',
-  SE: 'SE',
-  CH: 'CH',
-  SY: 'SY',
-  TW: 'TW',
-  TJ: 'TJ',
-  TZ: 'TZ',
-  TH: 'TH',
-  TL: 'TL',
-  TG: 'TG',
-  TK: 'TK',
-  TO: 'TO',
-  TT: 'TT',
-  TN: 'TN',
-  TR: 'TR',
-  TM: 'TM',
-  TC: 'TC',
-  TV: 'TV',
-  UG: 'UG',
-  UA: 'UA',
-  AE: 'AE',
-  GB: 'GB',
-  US: 'US',
-  UM: 'UM',
-  UY: 'UY',
-  UZ: 'UZ',
-  VU: 'VU',
-  VE: 'VE',
-  VN: 'VN',
-  VG: 'VG',
-  VI: 'VI',
-  WF: 'WF',
-  EH: 'EH',
-  YE: 'YE',
-  ZM: 'ZM',
-  ZW: 'ZW'
-};
-
-export type Country = (typeof Country)[keyof typeof Country]
-
-}
-
-export type Country = $Enums.Country
-
-export const Country: typeof $Enums.Country
+export type Country = $Result.DefaultSelection<Prisma.$CountryPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -532,6 +273,16 @@ export class PrismaClient<
     * ```
     */
   get playlistTrack(): Prisma.PlaylistTrackDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.country`: Exposes CRUD operations for the **Country** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Countries
+    * const countries = await prisma.country.findMany()
+    * ```
+    */
+  get country(): Prisma.CountryDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -979,7 +730,8 @@ export namespace Prisma {
     TrackGenre: 'TrackGenre',
     User: 'User',
     Playlist: 'Playlist',
-    PlaylistTrack: 'PlaylistTrack'
+    PlaylistTrack: 'PlaylistTrack',
+    Country: 'Country'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -998,7 +750,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "artist" | "album" | "track" | "genre" | "trackGenre" | "user" | "playlist" | "playlistTrack"
+      modelProps: "artist" | "album" | "track" | "genre" | "trackGenre" | "user" | "playlist" | "playlistTrack" | "country"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1594,6 +1346,80 @@ export namespace Prisma {
           }
         }
       }
+      Country: {
+        payload: Prisma.$CountryPayload<ExtArgs>
+        fields: Prisma.CountryFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CountryFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CountryFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          findFirst: {
+            args: Prisma.CountryFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CountryFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          findMany: {
+            args: Prisma.CountryFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>[]
+          }
+          create: {
+            args: Prisma.CountryCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          createMany: {
+            args: Prisma.CountryCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CountryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>[]
+          }
+          delete: {
+            args: Prisma.CountryDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          update: {
+            args: Prisma.CountryUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          deleteMany: {
+            args: Prisma.CountryDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CountryUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CountryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>[]
+          }
+          upsert: {
+            args: Prisma.CountryUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CountryPayload>
+          }
+          aggregate: {
+            args: Prisma.CountryAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCountry>
+          }
+          groupBy: {
+            args: Prisma.CountryGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CountryGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CountryCountArgs<ExtArgs>
+            result: $Utils.Optional<CountryCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1690,6 +1516,7 @@ export namespace Prisma {
     user?: UserOmit
     playlist?: PlaylistOmit
     playlistTrack?: PlaylistTrackOmit
+    country?: CountryOmit
   }
 
   /* Types for Logging */
@@ -1975,6 +1802,37 @@ export namespace Prisma {
 
 
   /**
+   * Count Type CountryCountOutputType
+   */
+
+  export type CountryCountOutputType = {
+    artists: number
+  }
+
+  export type CountryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    artists?: boolean | CountryCountOutputTypeCountArtistsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CountryCountOutputType without action
+   */
+  export type CountryCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CountryCountOutputType
+     */
+    select?: CountryCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CountryCountOutputType without action
+   */
+  export type CountryCountOutputTypeCountArtistsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ArtistWhereInput
+  }
+
+
+  /**
    * Models
    */
 
@@ -1991,7 +1849,7 @@ export namespace Prisma {
   export type ArtistMinAggregateOutputType = {
     id: string | null
     name: string | null
-    country: $Enums.Country | null
+    countryId: string | null
     bio: string | null
     image: string | null
     createdAt: Date | null
@@ -2001,7 +1859,7 @@ export namespace Prisma {
   export type ArtistMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    country: $Enums.Country | null
+    countryId: string | null
     bio: string | null
     image: string | null
     createdAt: Date | null
@@ -2011,7 +1869,7 @@ export namespace Prisma {
   export type ArtistCountAggregateOutputType = {
     id: number
     name: number
-    country: number
+    countryId: number
     bio: number
     image: number
     createdAt: number
@@ -2023,7 +1881,7 @@ export namespace Prisma {
   export type ArtistMinAggregateInputType = {
     id?: true
     name?: true
-    country?: true
+    countryId?: true
     bio?: true
     image?: true
     createdAt?: true
@@ -2033,7 +1891,7 @@ export namespace Prisma {
   export type ArtistMaxAggregateInputType = {
     id?: true
     name?: true
-    country?: true
+    countryId?: true
     bio?: true
     image?: true
     createdAt?: true
@@ -2043,7 +1901,7 @@ export namespace Prisma {
   export type ArtistCountAggregateInputType = {
     id?: true
     name?: true
-    country?: true
+    countryId?: true
     bio?: true
     image?: true
     createdAt?: true
@@ -2126,7 +1984,7 @@ export namespace Prisma {
   export type ArtistGroupByOutputType = {
     id: string
     name: string
-    country: $Enums.Country | null
+    countryId: string | null
     bio: string | null
     image: string | null
     createdAt: Date
@@ -2153,11 +2011,12 @@ export namespace Prisma {
   export type ArtistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    country?: boolean
+    countryId?: boolean
     bio?: boolean
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    country?: boolean | Artist$countryArgs<ExtArgs>
     albums?: boolean | Artist$albumsArgs<ExtArgs>
     _count?: boolean | ArtistCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["artist"]>
@@ -2165,50 +2024,58 @@ export namespace Prisma {
   export type ArtistSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    country?: boolean
+    countryId?: boolean
     bio?: boolean
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    country?: boolean | Artist$countryArgs<ExtArgs>
   }, ExtArgs["result"]["artist"]>
 
   export type ArtistSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    country?: boolean
+    countryId?: boolean
     bio?: boolean
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    country?: boolean | Artist$countryArgs<ExtArgs>
   }, ExtArgs["result"]["artist"]>
 
   export type ArtistSelectScalar = {
     id?: boolean
     name?: boolean
-    country?: boolean
+    countryId?: boolean
     bio?: boolean
     image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "country" | "bio" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["artist"]>
+  export type ArtistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "countryId" | "bio" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["artist"]>
   export type ArtistInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    country?: boolean | Artist$countryArgs<ExtArgs>
     albums?: boolean | Artist$albumsArgs<ExtArgs>
     _count?: boolean | ArtistCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type ArtistIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type ArtistIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ArtistIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    country?: boolean | Artist$countryArgs<ExtArgs>
+  }
+  export type ArtistIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    country?: boolean | Artist$countryArgs<ExtArgs>
+  }
 
   export type $ArtistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Artist"
     objects: {
+      country: Prisma.$CountryPayload<ExtArgs> | null
       albums: Prisma.$AlbumPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      country: $Enums.Country | null
+      countryId: string | null
       bio: string | null
       image: string | null
       createdAt: Date
@@ -2607,6 +2474,7 @@ export namespace Prisma {
    */
   export interface Prisma__ArtistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    country<T extends Artist$countryArgs<ExtArgs> = {}>(args?: Subset<T, Artist$countryArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     albums<T extends Artist$albumsArgs<ExtArgs> = {}>(args?: Subset<T, Artist$albumsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AlbumPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2639,7 +2507,7 @@ export namespace Prisma {
   interface ArtistFieldRefs {
     readonly id: FieldRef<"Artist", 'String'>
     readonly name: FieldRef<"Artist", 'String'>
-    readonly country: FieldRef<"Artist", 'Country'>
+    readonly countryId: FieldRef<"Artist", 'String'>
     readonly bio: FieldRef<"Artist", 'String'>
     readonly image: FieldRef<"Artist", 'String'>
     readonly createdAt: FieldRef<"Artist", 'DateTime'>
@@ -2893,6 +2761,10 @@ export namespace Prisma {
      */
     data: ArtistCreateManyInput | ArtistCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ArtistIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -2963,6 +2835,10 @@ export namespace Prisma {
      * Limit how many Artists to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ArtistIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -3029,6 +2905,25 @@ export namespace Prisma {
      * Limit how many Artists to delete.
      */
     limit?: number
+  }
+
+  /**
+   * Artist.country
+   */
+  export type Artist$countryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    where?: CountryWhereInput
   }
 
   /**
@@ -10698,6 +10593,1076 @@ export namespace Prisma {
 
 
   /**
+   * Model Country
+   */
+
+  export type AggregateCountry = {
+    _count: CountryCountAggregateOutputType | null
+    _min: CountryMinAggregateOutputType | null
+    _max: CountryMaxAggregateOutputType | null
+  }
+
+  export type CountryMinAggregateOutputType = {
+    id: string | null
+    code: string | null
+    name: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CountryMaxAggregateOutputType = {
+    id: string | null
+    code: string | null
+    name: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CountryCountAggregateOutputType = {
+    id: number
+    code: number
+    name: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CountryMinAggregateInputType = {
+    id?: true
+    code?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CountryMaxAggregateInputType = {
+    id?: true
+    code?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CountryCountAggregateInputType = {
+    id?: true
+    code?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CountryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Country to aggregate.
+     */
+    where?: CountryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Countries to fetch.
+     */
+    orderBy?: CountryOrderByWithRelationInput | CountryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CountryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Countries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Countries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Countries
+    **/
+    _count?: true | CountryCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CountryMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CountryMaxAggregateInputType
+  }
+
+  export type GetCountryAggregateType<T extends CountryAggregateArgs> = {
+        [P in keyof T & keyof AggregateCountry]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCountry[P]>
+      : GetScalarType<T[P], AggregateCountry[P]>
+  }
+
+
+
+
+  export type CountryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CountryWhereInput
+    orderBy?: CountryOrderByWithAggregationInput | CountryOrderByWithAggregationInput[]
+    by: CountryScalarFieldEnum[] | CountryScalarFieldEnum
+    having?: CountryScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CountryCountAggregateInputType | true
+    _min?: CountryMinAggregateInputType
+    _max?: CountryMaxAggregateInputType
+  }
+
+  export type CountryGroupByOutputType = {
+    id: string
+    code: string
+    name: string
+    createdAt: Date
+    updatedAt: Date
+    _count: CountryCountAggregateOutputType | null
+    _min: CountryMinAggregateOutputType | null
+    _max: CountryMaxAggregateOutputType | null
+  }
+
+  type GetCountryGroupByPayload<T extends CountryGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CountryGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CountryGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CountryGroupByOutputType[P]>
+            : GetScalarType<T[P], CountryGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CountrySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    artists?: boolean | Country$artistsArgs<ExtArgs>
+    _count?: boolean | CountryCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["country"]>
+
+  export type CountrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["country"]>
+
+  export type CountrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["country"]>
+
+  export type CountrySelectScalar = {
+    id?: boolean
+    code?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CountryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["country"]>
+  export type CountryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    artists?: boolean | Country$artistsArgs<ExtArgs>
+    _count?: boolean | CountryCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CountryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CountryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $CountryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Country"
+    objects: {
+      artists: Prisma.$ArtistPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      code: string
+      name: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["country"]>
+    composites: {}
+  }
+
+  type CountryGetPayload<S extends boolean | null | undefined | CountryDefaultArgs> = $Result.GetResult<Prisma.$CountryPayload, S>
+
+  type CountryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CountryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CountryCountAggregateInputType | true
+    }
+
+  export interface CountryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Country'], meta: { name: 'Country' } }
+    /**
+     * Find zero or one Country that matches the filter.
+     * @param {CountryFindUniqueArgs} args - Arguments to find a Country
+     * @example
+     * // Get one Country
+     * const country = await prisma.country.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CountryFindUniqueArgs>(args: SelectSubset<T, CountryFindUniqueArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Country that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CountryFindUniqueOrThrowArgs} args - Arguments to find a Country
+     * @example
+     * // Get one Country
+     * const country = await prisma.country.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CountryFindUniqueOrThrowArgs>(args: SelectSubset<T, CountryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Country that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryFindFirstArgs} args - Arguments to find a Country
+     * @example
+     * // Get one Country
+     * const country = await prisma.country.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CountryFindFirstArgs>(args?: SelectSubset<T, CountryFindFirstArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Country that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryFindFirstOrThrowArgs} args - Arguments to find a Country
+     * @example
+     * // Get one Country
+     * const country = await prisma.country.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CountryFindFirstOrThrowArgs>(args?: SelectSubset<T, CountryFindFirstOrThrowArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Countries that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Countries
+     * const countries = await prisma.country.findMany()
+     * 
+     * // Get first 10 Countries
+     * const countries = await prisma.country.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const countryWithIdOnly = await prisma.country.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CountryFindManyArgs>(args?: SelectSubset<T, CountryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Country.
+     * @param {CountryCreateArgs} args - Arguments to create a Country.
+     * @example
+     * // Create one Country
+     * const Country = await prisma.country.create({
+     *   data: {
+     *     // ... data to create a Country
+     *   }
+     * })
+     * 
+     */
+    create<T extends CountryCreateArgs>(args: SelectSubset<T, CountryCreateArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Countries.
+     * @param {CountryCreateManyArgs} args - Arguments to create many Countries.
+     * @example
+     * // Create many Countries
+     * const country = await prisma.country.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CountryCreateManyArgs>(args?: SelectSubset<T, CountryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Countries and returns the data saved in the database.
+     * @param {CountryCreateManyAndReturnArgs} args - Arguments to create many Countries.
+     * @example
+     * // Create many Countries
+     * const country = await prisma.country.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Countries and only return the `id`
+     * const countryWithIdOnly = await prisma.country.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CountryCreateManyAndReturnArgs>(args?: SelectSubset<T, CountryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Country.
+     * @param {CountryDeleteArgs} args - Arguments to delete one Country.
+     * @example
+     * // Delete one Country
+     * const Country = await prisma.country.delete({
+     *   where: {
+     *     // ... filter to delete one Country
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CountryDeleteArgs>(args: SelectSubset<T, CountryDeleteArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Country.
+     * @param {CountryUpdateArgs} args - Arguments to update one Country.
+     * @example
+     * // Update one Country
+     * const country = await prisma.country.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CountryUpdateArgs>(args: SelectSubset<T, CountryUpdateArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Countries.
+     * @param {CountryDeleteManyArgs} args - Arguments to filter Countries to delete.
+     * @example
+     * // Delete a few Countries
+     * const { count } = await prisma.country.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CountryDeleteManyArgs>(args?: SelectSubset<T, CountryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Countries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Countries
+     * const country = await prisma.country.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CountryUpdateManyArgs>(args: SelectSubset<T, CountryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Countries and returns the data updated in the database.
+     * @param {CountryUpdateManyAndReturnArgs} args - Arguments to update many Countries.
+     * @example
+     * // Update many Countries
+     * const country = await prisma.country.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Countries and only return the `id`
+     * const countryWithIdOnly = await prisma.country.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CountryUpdateManyAndReturnArgs>(args: SelectSubset<T, CountryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Country.
+     * @param {CountryUpsertArgs} args - Arguments to update or create a Country.
+     * @example
+     * // Update or create a Country
+     * const country = await prisma.country.upsert({
+     *   create: {
+     *     // ... data to create a Country
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Country we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CountryUpsertArgs>(args: SelectSubset<T, CountryUpsertArgs<ExtArgs>>): Prisma__CountryClient<$Result.GetResult<Prisma.$CountryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Countries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryCountArgs} args - Arguments to filter Countries to count.
+     * @example
+     * // Count the number of Countries
+     * const count = await prisma.country.count({
+     *   where: {
+     *     // ... the filter for the Countries we want to count
+     *   }
+     * })
+    **/
+    count<T extends CountryCountArgs>(
+      args?: Subset<T, CountryCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CountryCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Country.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CountryAggregateArgs>(args: Subset<T, CountryAggregateArgs>): Prisma.PrismaPromise<GetCountryAggregateType<T>>
+
+    /**
+     * Group by Country.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CountryGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CountryGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CountryGroupByArgs['orderBy'] }
+        : { orderBy?: CountryGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CountryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCountryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Country model
+   */
+  readonly fields: CountryFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Country.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CountryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    artists<T extends Country$artistsArgs<ExtArgs> = {}>(args?: Subset<T, Country$artistsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ArtistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Country model
+   */
+  interface CountryFieldRefs {
+    readonly id: FieldRef<"Country", 'String'>
+    readonly code: FieldRef<"Country", 'String'>
+    readonly name: FieldRef<"Country", 'String'>
+    readonly createdAt: FieldRef<"Country", 'DateTime'>
+    readonly updatedAt: FieldRef<"Country", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Country findUnique
+   */
+  export type CountryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter, which Country to fetch.
+     */
+    where: CountryWhereUniqueInput
+  }
+
+  /**
+   * Country findUniqueOrThrow
+   */
+  export type CountryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter, which Country to fetch.
+     */
+    where: CountryWhereUniqueInput
+  }
+
+  /**
+   * Country findFirst
+   */
+  export type CountryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter, which Country to fetch.
+     */
+    where?: CountryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Countries to fetch.
+     */
+    orderBy?: CountryOrderByWithRelationInput | CountryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Countries.
+     */
+    cursor?: CountryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Countries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Countries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Countries.
+     */
+    distinct?: CountryScalarFieldEnum | CountryScalarFieldEnum[]
+  }
+
+  /**
+   * Country findFirstOrThrow
+   */
+  export type CountryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter, which Country to fetch.
+     */
+    where?: CountryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Countries to fetch.
+     */
+    orderBy?: CountryOrderByWithRelationInput | CountryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Countries.
+     */
+    cursor?: CountryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Countries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Countries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Countries.
+     */
+    distinct?: CountryScalarFieldEnum | CountryScalarFieldEnum[]
+  }
+
+  /**
+   * Country findMany
+   */
+  export type CountryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter, which Countries to fetch.
+     */
+    where?: CountryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Countries to fetch.
+     */
+    orderBy?: CountryOrderByWithRelationInput | CountryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Countries.
+     */
+    cursor?: CountryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Countries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Countries.
+     */
+    skip?: number
+    distinct?: CountryScalarFieldEnum | CountryScalarFieldEnum[]
+  }
+
+  /**
+   * Country create
+   */
+  export type CountryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Country.
+     */
+    data: XOR<CountryCreateInput, CountryUncheckedCreateInput>
+  }
+
+  /**
+   * Country createMany
+   */
+  export type CountryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Countries.
+     */
+    data: CountryCreateManyInput | CountryCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Country createManyAndReturn
+   */
+  export type CountryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * The data used to create many Countries.
+     */
+    data: CountryCreateManyInput | CountryCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Country update
+   */
+  export type CountryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Country.
+     */
+    data: XOR<CountryUpdateInput, CountryUncheckedUpdateInput>
+    /**
+     * Choose, which Country to update.
+     */
+    where: CountryWhereUniqueInput
+  }
+
+  /**
+   * Country updateMany
+   */
+  export type CountryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Countries.
+     */
+    data: XOR<CountryUpdateManyMutationInput, CountryUncheckedUpdateManyInput>
+    /**
+     * Filter which Countries to update
+     */
+    where?: CountryWhereInput
+    /**
+     * Limit how many Countries to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Country updateManyAndReturn
+   */
+  export type CountryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * The data used to update Countries.
+     */
+    data: XOR<CountryUpdateManyMutationInput, CountryUncheckedUpdateManyInput>
+    /**
+     * Filter which Countries to update
+     */
+    where?: CountryWhereInput
+    /**
+     * Limit how many Countries to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Country upsert
+   */
+  export type CountryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Country to update in case it exists.
+     */
+    where: CountryWhereUniqueInput
+    /**
+     * In case the Country found by the `where` argument doesn't exist, create a new Country with this data.
+     */
+    create: XOR<CountryCreateInput, CountryUncheckedCreateInput>
+    /**
+     * In case the Country was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CountryUpdateInput, CountryUncheckedUpdateInput>
+  }
+
+  /**
+   * Country delete
+   */
+  export type CountryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+    /**
+     * Filter which Country to delete.
+     */
+    where: CountryWhereUniqueInput
+  }
+
+  /**
+   * Country deleteMany
+   */
+  export type CountryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Countries to delete
+     */
+    where?: CountryWhereInput
+    /**
+     * Limit how many Countries to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Country.artists
+   */
+  export type Country$artistsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Artist
+     */
+    select?: ArtistSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Artist
+     */
+    omit?: ArtistOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ArtistInclude<ExtArgs> | null
+    where?: ArtistWhereInput
+    orderBy?: ArtistOrderByWithRelationInput | ArtistOrderByWithRelationInput[]
+    cursor?: ArtistWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ArtistScalarFieldEnum | ArtistScalarFieldEnum[]
+  }
+
+  /**
+   * Country without action
+   */
+  export type CountryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Country
+     */
+    select?: CountrySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Country
+     */
+    omit?: CountryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CountryInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -10714,7 +11679,7 @@ export namespace Prisma {
   export const ArtistScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    country: 'country',
+    countryId: 'countryId',
     bio: 'bio',
     image: 'image',
     createdAt: 'createdAt',
@@ -10800,6 +11765,17 @@ export namespace Prisma {
   export type PlaylistTrackScalarFieldEnum = (typeof PlaylistTrackScalarFieldEnum)[keyof typeof PlaylistTrackScalarFieldEnum]
 
 
+  export const CountryScalarFieldEnum: {
+    id: 'id',
+    code: 'code',
+    name: 'name',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CountryScalarFieldEnum = (typeof CountryScalarFieldEnum)[keyof typeof CountryScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -10840,20 +11816,6 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Country'
-   */
-  export type EnumCountryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Country'>
-    
-
-
-  /**
-   * Reference to a field of type 'Country[]'
-   */
-  export type ListEnumCountryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Country[]'>
     
 
 
@@ -10908,22 +11870,24 @@ export namespace Prisma {
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     id?: StringFilter<"Artist"> | string
     name?: StringFilter<"Artist"> | string
-    country?: EnumCountryNullableFilter<"Artist"> | $Enums.Country | null
+    countryId?: StringNullableFilter<"Artist"> | string | null
     bio?: StringNullableFilter<"Artist"> | string | null
     image?: StringNullableFilter<"Artist"> | string | null
     createdAt?: DateTimeFilter<"Artist"> | Date | string
     updatedAt?: DateTimeFilter<"Artist"> | Date | string
+    country?: XOR<CountryNullableScalarRelationFilter, CountryWhereInput> | null
     albums?: AlbumListRelationFilter
   }
 
   export type ArtistOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    country?: SortOrderInput | SortOrder
+    countryId?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    country?: CountryOrderByWithRelationInput
     albums?: AlbumOrderByRelationAggregateInput
   }
 
@@ -10933,18 +11897,19 @@ export namespace Prisma {
     OR?: ArtistWhereInput[]
     NOT?: ArtistWhereInput | ArtistWhereInput[]
     name?: StringFilter<"Artist"> | string
-    country?: EnumCountryNullableFilter<"Artist"> | $Enums.Country | null
+    countryId?: StringNullableFilter<"Artist"> | string | null
     bio?: StringNullableFilter<"Artist"> | string | null
     image?: StringNullableFilter<"Artist"> | string | null
     createdAt?: DateTimeFilter<"Artist"> | Date | string
     updatedAt?: DateTimeFilter<"Artist"> | Date | string
+    country?: XOR<CountryNullableScalarRelationFilter, CountryWhereInput> | null
     albums?: AlbumListRelationFilter
   }, "id">
 
   export type ArtistOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    country?: SortOrderInput | SortOrder
+    countryId?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -10960,7 +11925,7 @@ export namespace Prisma {
     NOT?: ArtistScalarWhereWithAggregatesInput | ArtistScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Artist"> | string
     name?: StringWithAggregatesFilter<"Artist"> | string
-    country?: EnumCountryNullableWithAggregatesFilter<"Artist"> | $Enums.Country | null
+    countryId?: StringNullableWithAggregatesFilter<"Artist"> | string | null
     bio?: StringNullableWithAggregatesFilter<"Artist"> | string | null
     image?: StringNullableWithAggregatesFilter<"Artist"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Artist"> | Date | string
@@ -11371,21 +12336,76 @@ export namespace Prisma {
     trackOrder?: IntNullableWithAggregatesFilter<"PlaylistTrack"> | number | null
   }
 
+  export type CountryWhereInput = {
+    AND?: CountryWhereInput | CountryWhereInput[]
+    OR?: CountryWhereInput[]
+    NOT?: CountryWhereInput | CountryWhereInput[]
+    id?: StringFilter<"Country"> | string
+    code?: StringFilter<"Country"> | string
+    name?: StringFilter<"Country"> | string
+    createdAt?: DateTimeFilter<"Country"> | Date | string
+    updatedAt?: DateTimeFilter<"Country"> | Date | string
+    artists?: ArtistListRelationFilter
+  }
+
+  export type CountryOrderByWithRelationInput = {
+    id?: SortOrder
+    code?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    artists?: ArtistOrderByRelationAggregateInput
+  }
+
+  export type CountryWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    code?: string
+    AND?: CountryWhereInput | CountryWhereInput[]
+    OR?: CountryWhereInput[]
+    NOT?: CountryWhereInput | CountryWhereInput[]
+    name?: StringFilter<"Country"> | string
+    createdAt?: DateTimeFilter<"Country"> | Date | string
+    updatedAt?: DateTimeFilter<"Country"> | Date | string
+    artists?: ArtistListRelationFilter
+  }, "id" | "code">
+
+  export type CountryOrderByWithAggregationInput = {
+    id?: SortOrder
+    code?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: CountryCountOrderByAggregateInput
+    _max?: CountryMaxOrderByAggregateInput
+    _min?: CountryMinOrderByAggregateInput
+  }
+
+  export type CountryScalarWhereWithAggregatesInput = {
+    AND?: CountryScalarWhereWithAggregatesInput | CountryScalarWhereWithAggregatesInput[]
+    OR?: CountryScalarWhereWithAggregatesInput[]
+    NOT?: CountryScalarWhereWithAggregatesInput | CountryScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Country"> | string
+    code?: StringWithAggregatesFilter<"Country"> | string
+    name?: StringWithAggregatesFilter<"Country"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Country"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Country"> | Date | string
+  }
+
   export type ArtistCreateInput = {
     id?: string
     name: string
-    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+    country?: CountryCreateNestedOneWithoutArtistsInput
     albums?: AlbumCreateNestedManyWithoutArtistInput
   }
 
   export type ArtistUncheckedCreateInput = {
     id?: string
     name: string
-    country?: $Enums.Country | null
+    countryId?: string | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -11396,18 +12416,18 @@ export namespace Prisma {
   export type ArtistUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    country?: CountryUpdateOneWithoutArtistsNestedInput
     albums?: AlbumUpdateManyWithoutArtistNestedInput
   }
 
   export type ArtistUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
+    countryId?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11418,7 +12438,7 @@ export namespace Prisma {
   export type ArtistCreateManyInput = {
     id?: string
     name: string
-    country?: $Enums.Country | null
+    countryId?: string | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -11428,7 +12448,6 @@ export namespace Prisma {
   export type ArtistUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11438,7 +12457,7 @@ export namespace Prisma {
   export type ArtistUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
+    countryId?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11848,6 +12867,66 @@ export namespace Prisma {
     trackOrder?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
+  export type CountryCreateInput = {
+    id?: string
+    code: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    artists?: ArtistCreateNestedManyWithoutCountryInput
+  }
+
+  export type CountryUncheckedCreateInput = {
+    id?: string
+    code: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    artists?: ArtistUncheckedCreateNestedManyWithoutCountryInput
+  }
+
+  export type CountryUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    artists?: ArtistUpdateManyWithoutCountryNestedInput
+  }
+
+  export type CountryUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    artists?: ArtistUncheckedUpdateManyWithoutCountryNestedInput
+  }
+
+  export type CountryCreateManyInput = {
+    id?: string
+    code: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CountryUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CountryUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -11861,13 +12940,6 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type EnumCountryNullableFilter<$PrismaModel = never> = {
-    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
-    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    not?: NestedEnumCountryNullableFilter<$PrismaModel> | $Enums.Country | null
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -11896,6 +12968,11 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type CountryNullableScalarRelationFilter = {
+    is?: CountryWhereInput | null
+    isNot?: CountryWhereInput | null
+  }
+
   export type AlbumListRelationFilter = {
     every?: AlbumWhereInput
     some?: AlbumWhereInput
@@ -11914,7 +12991,7 @@ export namespace Prisma {
   export type ArtistCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    country?: SortOrder
+    countryId?: SortOrder
     bio?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
@@ -11924,7 +13001,7 @@ export namespace Prisma {
   export type ArtistMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    country?: SortOrder
+    countryId?: SortOrder
     bio?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
@@ -11934,7 +13011,7 @@ export namespace Prisma {
   export type ArtistMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    country?: SortOrder
+    countryId?: SortOrder
     bio?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
@@ -11957,16 +13034,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type EnumCountryNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
-    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    not?: NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel> | $Enums.Country | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedEnumCountryNullableFilter<$PrismaModel>
-    _max?: NestedEnumCountryNullableFilter<$PrismaModel>
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -12318,6 +13385,46 @@ export namespace Prisma {
     trackOrder?: SortOrder
   }
 
+  export type ArtistListRelationFilter = {
+    every?: ArtistWhereInput
+    some?: ArtistWhereInput
+    none?: ArtistWhereInput
+  }
+
+  export type ArtistOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CountryCountOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CountryMaxOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CountryMinOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CountryCreateNestedOneWithoutArtistsInput = {
+    create?: XOR<CountryCreateWithoutArtistsInput, CountryUncheckedCreateWithoutArtistsInput>
+    connectOrCreate?: CountryCreateOrConnectWithoutArtistsInput
+    connect?: CountryWhereUniqueInput
+  }
+
   export type AlbumCreateNestedManyWithoutArtistInput = {
     create?: XOR<AlbumCreateWithoutArtistInput, AlbumUncheckedCreateWithoutArtistInput> | AlbumCreateWithoutArtistInput[] | AlbumUncheckedCreateWithoutArtistInput[]
     connectOrCreate?: AlbumCreateOrConnectWithoutArtistInput | AlbumCreateOrConnectWithoutArtistInput[]
@@ -12336,16 +13443,22 @@ export namespace Prisma {
     set?: string
   }
 
-  export type NullableEnumCountryFieldUpdateOperationsInput = {
-    set?: $Enums.Country | null
-  }
-
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
+  }
+
+  export type CountryUpdateOneWithoutArtistsNestedInput = {
+    create?: XOR<CountryCreateWithoutArtistsInput, CountryUncheckedCreateWithoutArtistsInput>
+    connectOrCreate?: CountryCreateOrConnectWithoutArtistsInput
+    upsert?: CountryUpsertWithoutArtistsInput
+    disconnect?: CountryWhereInput | boolean
+    delete?: CountryWhereInput | boolean
+    connect?: CountryWhereUniqueInput
+    update?: XOR<XOR<CountryUpdateToOneWithWhereWithoutArtistsInput, CountryUpdateWithoutArtistsInput>, CountryUncheckedUpdateWithoutArtistsInput>
   }
 
   export type AlbumUpdateManyWithoutArtistNestedInput = {
@@ -12742,6 +13855,48 @@ export namespace Prisma {
     update?: XOR<XOR<TrackUpdateToOneWithWhereWithoutPlaylistsInput, TrackUpdateWithoutPlaylistsInput>, TrackUncheckedUpdateWithoutPlaylistsInput>
   }
 
+  export type ArtistCreateNestedManyWithoutCountryInput = {
+    create?: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput> | ArtistCreateWithoutCountryInput[] | ArtistUncheckedCreateWithoutCountryInput[]
+    connectOrCreate?: ArtistCreateOrConnectWithoutCountryInput | ArtistCreateOrConnectWithoutCountryInput[]
+    createMany?: ArtistCreateManyCountryInputEnvelope
+    connect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+  }
+
+  export type ArtistUncheckedCreateNestedManyWithoutCountryInput = {
+    create?: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput> | ArtistCreateWithoutCountryInput[] | ArtistUncheckedCreateWithoutCountryInput[]
+    connectOrCreate?: ArtistCreateOrConnectWithoutCountryInput | ArtistCreateOrConnectWithoutCountryInput[]
+    createMany?: ArtistCreateManyCountryInputEnvelope
+    connect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+  }
+
+  export type ArtistUpdateManyWithoutCountryNestedInput = {
+    create?: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput> | ArtistCreateWithoutCountryInput[] | ArtistUncheckedCreateWithoutCountryInput[]
+    connectOrCreate?: ArtistCreateOrConnectWithoutCountryInput | ArtistCreateOrConnectWithoutCountryInput[]
+    upsert?: ArtistUpsertWithWhereUniqueWithoutCountryInput | ArtistUpsertWithWhereUniqueWithoutCountryInput[]
+    createMany?: ArtistCreateManyCountryInputEnvelope
+    set?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    disconnect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    delete?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    connect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    update?: ArtistUpdateWithWhereUniqueWithoutCountryInput | ArtistUpdateWithWhereUniqueWithoutCountryInput[]
+    updateMany?: ArtistUpdateManyWithWhereWithoutCountryInput | ArtistUpdateManyWithWhereWithoutCountryInput[]
+    deleteMany?: ArtistScalarWhereInput | ArtistScalarWhereInput[]
+  }
+
+  export type ArtistUncheckedUpdateManyWithoutCountryNestedInput = {
+    create?: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput> | ArtistCreateWithoutCountryInput[] | ArtistUncheckedCreateWithoutCountryInput[]
+    connectOrCreate?: ArtistCreateOrConnectWithoutCountryInput | ArtistCreateOrConnectWithoutCountryInput[]
+    upsert?: ArtistUpsertWithWhereUniqueWithoutCountryInput | ArtistUpsertWithWhereUniqueWithoutCountryInput[]
+    createMany?: ArtistCreateManyCountryInputEnvelope
+    set?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    disconnect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    delete?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    connect?: ArtistWhereUniqueInput | ArtistWhereUniqueInput[]
+    update?: ArtistUpdateWithWhereUniqueWithoutCountryInput | ArtistUpdateWithWhereUniqueWithoutCountryInput[]
+    updateMany?: ArtistUpdateManyWithWhereWithoutCountryInput | ArtistUpdateManyWithWhereWithoutCountryInput[]
+    deleteMany?: ArtistScalarWhereInput | ArtistScalarWhereInput[]
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -12754,13 +13909,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedEnumCountryNullableFilter<$PrismaModel = never> = {
-    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
-    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    not?: NestedEnumCountryNullableFilter<$PrismaModel> | $Enums.Country | null
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -12816,27 +13964,6 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Country | EnumCountryFieldRefInput<$PrismaModel> | null
-    in?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    notIn?: $Enums.Country[] | ListEnumCountryFieldRefInput<$PrismaModel> | null
-    not?: NestedEnumCountryNullableWithAggregatesFilter<$PrismaModel> | $Enums.Country | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedEnumCountryNullableFilter<$PrismaModel>
-    _max?: NestedEnumCountryNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -12852,6 +13979,17 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -12922,6 +14060,27 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type CountryCreateWithoutArtistsInput = {
+    id?: string
+    code: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CountryUncheckedCreateWithoutArtistsInput = {
+    id?: string
+    code: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CountryCreateOrConnectWithoutArtistsInput = {
+    where: CountryWhereUniqueInput
+    create: XOR<CountryCreateWithoutArtistsInput, CountryUncheckedCreateWithoutArtistsInput>
+  }
+
   export type AlbumCreateWithoutArtistInput = {
     id?: string
     title: string
@@ -12948,6 +14107,33 @@ export namespace Prisma {
   export type AlbumCreateManyArtistInputEnvelope = {
     data: AlbumCreateManyArtistInput | AlbumCreateManyArtistInput[]
     skipDuplicates?: boolean
+  }
+
+  export type CountryUpsertWithoutArtistsInput = {
+    update: XOR<CountryUpdateWithoutArtistsInput, CountryUncheckedUpdateWithoutArtistsInput>
+    create: XOR<CountryCreateWithoutArtistsInput, CountryUncheckedCreateWithoutArtistsInput>
+    where?: CountryWhereInput
+  }
+
+  export type CountryUpdateToOneWithWhereWithoutArtistsInput = {
+    where?: CountryWhereInput
+    data: XOR<CountryUpdateWithoutArtistsInput, CountryUncheckedUpdateWithoutArtistsInput>
+  }
+
+  export type CountryUpdateWithoutArtistsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CountryUncheckedUpdateWithoutArtistsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    code?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AlbumUpsertWithWhereUniqueWithoutArtistInput = {
@@ -12981,17 +14167,17 @@ export namespace Prisma {
   export type ArtistCreateWithoutAlbumsInput = {
     id?: string
     name: string
-    country?: $Enums.Country | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+    country?: CountryCreateNestedOneWithoutArtistsInput
   }
 
   export type ArtistUncheckedCreateWithoutAlbumsInput = {
     id?: string
     name: string
-    country?: $Enums.Country | null
+    countryId?: string | null
     bio?: string | null
     image?: string | null
     createdAt?: Date | string
@@ -13049,17 +14235,17 @@ export namespace Prisma {
   export type ArtistUpdateWithoutAlbumsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    country?: CountryUpdateOneWithoutArtistsNestedInput
   }
 
   export type ArtistUncheckedUpdateWithoutAlbumsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    country?: NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
+    countryId?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13626,6 +14812,65 @@ export namespace Prisma {
     genres?: TrackGenreUncheckedUpdateManyWithoutTrackNestedInput
   }
 
+  export type ArtistCreateWithoutCountryInput = {
+    id?: string
+    name: string
+    bio?: string | null
+    image?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    albums?: AlbumCreateNestedManyWithoutArtistInput
+  }
+
+  export type ArtistUncheckedCreateWithoutCountryInput = {
+    id?: string
+    name: string
+    bio?: string | null
+    image?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    albums?: AlbumUncheckedCreateNestedManyWithoutArtistInput
+  }
+
+  export type ArtistCreateOrConnectWithoutCountryInput = {
+    where: ArtistWhereUniqueInput
+    create: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput>
+  }
+
+  export type ArtistCreateManyCountryInputEnvelope = {
+    data: ArtistCreateManyCountryInput | ArtistCreateManyCountryInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ArtistUpsertWithWhereUniqueWithoutCountryInput = {
+    where: ArtistWhereUniqueInput
+    update: XOR<ArtistUpdateWithoutCountryInput, ArtistUncheckedUpdateWithoutCountryInput>
+    create: XOR<ArtistCreateWithoutCountryInput, ArtistUncheckedCreateWithoutCountryInput>
+  }
+
+  export type ArtistUpdateWithWhereUniqueWithoutCountryInput = {
+    where: ArtistWhereUniqueInput
+    data: XOR<ArtistUpdateWithoutCountryInput, ArtistUncheckedUpdateWithoutCountryInput>
+  }
+
+  export type ArtistUpdateManyWithWhereWithoutCountryInput = {
+    where: ArtistScalarWhereInput
+    data: XOR<ArtistUpdateManyMutationInput, ArtistUncheckedUpdateManyWithoutCountryInput>
+  }
+
+  export type ArtistScalarWhereInput = {
+    AND?: ArtistScalarWhereInput | ArtistScalarWhereInput[]
+    OR?: ArtistScalarWhereInput[]
+    NOT?: ArtistScalarWhereInput | ArtistScalarWhereInput[]
+    id?: StringFilter<"Artist"> | string
+    name?: StringFilter<"Artist"> | string
+    countryId?: StringNullableFilter<"Artist"> | string | null
+    bio?: StringNullableFilter<"Artist"> | string | null
+    image?: StringNullableFilter<"Artist"> | string | null
+    createdAt?: DateTimeFilter<"Artist"> | Date | string
+    updatedAt?: DateTimeFilter<"Artist"> | Date | string
+  }
+
   export type AlbumCreateManyArtistInput = {
     id?: string
     title: string
@@ -13808,6 +15053,44 @@ export namespace Prisma {
     trackId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     trackOrder?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type ArtistCreateManyCountryInput = {
+    id?: string
+    name: string
+    bio?: string | null
+    image?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ArtistUpdateWithoutCountryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    albums?: AlbumUpdateManyWithoutArtistNestedInput
+  }
+
+  export type ArtistUncheckedUpdateWithoutCountryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    albums?: AlbumUncheckedUpdateManyWithoutArtistNestedInput
+  }
+
+  export type ArtistUncheckedUpdateManyWithoutCountryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

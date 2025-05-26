@@ -1,6 +1,6 @@
 "use client";
 import { ArtistSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 import {
   createArtist,
   updateArtist,
@@ -10,7 +10,7 @@ import { fetchArtists } from "@/lib/api/tables";
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="Artists Table"
       item="Artist"
       schema={ArtistSchema}

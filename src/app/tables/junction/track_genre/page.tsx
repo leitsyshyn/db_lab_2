@@ -1,6 +1,6 @@
 "use client";
 import { TrackGenreSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 
 import { fetchTrackGenres } from "@/lib/api/tables";
 import {
@@ -11,7 +11,7 @@ import {
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="TrackGenre Table"
       item="TrackGenre"
       schema={TrackGenreSchema}

@@ -49,6 +49,10 @@ const items = {
           url: "/tables/model/artists",
         },
         {
+          title: "Countries",
+          url: "/tables/model/countries",
+        },
+        {
           title: "Genres",
           url: "/tables/model/genres",
         },

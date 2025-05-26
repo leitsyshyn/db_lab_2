@@ -37,10 +37,10 @@ export async function fetchSimpleQuery3(params: {
 }
 
 export async function fetchSimpleQuery4(params: {
-  country: string;
+  countryId: string;
 }): Promise<SimpleQuery4[]> {
   const res = await fetch(
-    `/api/queries/simple/query4?country=${params.country}`
+    `/api/queries/simple/query4?countryId=${params.countryId}`
   );
   if (!res.ok) throw new Error("Failed to fetch simple query 4");
   return await res.json();

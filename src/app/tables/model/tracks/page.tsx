@@ -1,6 +1,6 @@
 "use client";
 import { TrackSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 import {
   createTrack,
   updateTrack,
@@ -10,7 +10,7 @@ import { fetchTracks } from "@/lib/api/tables";
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="Tracks Table"
       item="Track"
       schema={TrackSchema}

@@ -1,7 +1,11 @@
 "use client";
 
 import { ReactNode } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 import { Toaster } from "sonner";
 import {
   SidebarInset,
@@ -20,16 +24,74 @@ import {
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
 import React from "react";
+import {
+  fetchCountries,
+  fetchPlaylists,
+  fetchTracks,
+  fetchArtists,
+  fetchGenres,
+  fetchAlbums,
+  fetchUsers,
+} from "@/lib/api/tables";
+import { FieldOptionsProvider } from "@/contexts/FieldOptionsContext";
+import { Option } from "@/components/ui/combobox";
 
 const queryClient = new QueryClient();
 
 export function Providers({ children }: { children: ReactNode }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <InnerProviders>{children}</InnerProviders>
+    </QueryClientProvider>
+  );
+}
+
+export function InnerProviders({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
   let hrefAcc = "";
 
+  const { data: countries = [] } = useQuery({
+    queryKey: ["countries"],
+    queryFn: fetchCountries,
+  });
+  const { data: playlists = [] } = useQuery({
+    queryKey: ["playlists"],
+    queryFn: fetchPlaylists,
+  });
+  const { data: tracks = [] } = useQuery({
+    queryKey: ["tracks"],
+    queryFn: fetchTracks,
+  });
+  const { data: artists = [] } = useQuery({
+    queryKey: ["artists"],
+    queryFn: fetchArtists,
+  });
+  const { data: genres = [] } = useQuery({
+    queryKey: ["genres"],
+    queryFn: fetchGenres,
+  });
+  const { data: albums = [] } = useQuery({
+    queryKey: ["albums"],
+    queryFn: fetchAlbums,
+  });
+  const { data: users = [] } = useQuery({
+    queryKey: ["users"],
+    queryFn: fetchUsers,
+  });
+
+  const fieldOptions: Record<string, Option[]> = {
+    countryId: countries.map((c) => ({ value: c.id, label: c.name })),
+    playlistId: playlists.map((p) => ({ value: p.id, label: p.name })),
+    trackId: tracks.map((t) => ({ value: t.id, label: t.title })),
+    artistId: artists.map((a) => ({ value: a.id, label: a.name })),
+    genreId: genres.map((g) => ({ value: g.id, label: g.name })),
+    albumId: albums.map((a) => ({ value: a.id, label: a.title })),
+    userId: users.map((u) => ({ value: u.id, label: u.username })),
+  };
+
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
@@ -72,12 +134,14 @@ export function Providers({ children }: { children: ReactNode }) {
             </div>
           </header>
           <main className="flex h-full flex-col overflow-y-auto p-4 pt-0">
-            {children}
+            <FieldOptionsProvider options={fieldOptions}>
+              {children}
+            </FieldOptionsProvider>
           </main>
         </SidebarInset>
       </SidebarProvider>
 
       <Toaster richColors />
-    </QueryClientProvider>
+    </>
   );
 }

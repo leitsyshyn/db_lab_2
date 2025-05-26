@@ -40,7 +40,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
         <PopoverContent className="w-auto p-0">
           <Calendar
             mode="single"
-            captionLayout="dropdown-buttons"
+            captionLayout="buttons"
             fromYear={1900}
             toYear={new Date().getFullYear() + 5}
             selected={value}

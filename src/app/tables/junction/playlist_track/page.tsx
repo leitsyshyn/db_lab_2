@@ -1,6 +1,6 @@
 "use client";
 import { PlaylistTrackSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 import {
   createPlaylistTrack,
   deletePlaylistTrack,
@@ -10,7 +10,7 @@ import { fetchPlaylistTracks } from "@/lib/api/tables";
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="PlaylistTrack Table"
       item="PlaylistTrack"
       schema={PlaylistTrackSchema}

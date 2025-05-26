@@ -39,6 +39,9 @@ import {
   setComparisonQuery3ParamsSchema,
   PlaylistTrackUpdateSchema,
   TrackGenreUpdateSchema,
+  CountryCreateSchema,
+  CountrySchema,
+  CountryUpdateSchema,
 } from "./schemas";
 
 // Artist
@@ -60,6 +63,11 @@ export type Track = z.infer<typeof TrackSchema>;
 export type GenreCreate = z.infer<typeof GenreCreateSchema>;
 export type GenreUpdate = z.infer<typeof GenreUpdateSchema>;
 export type Genre = z.infer<typeof GenreSchema>;
+
+// Cpountry
+export type CountryCreate = z.infer<typeof CountryCreateSchema>;
+export type CountryUpdate = z.infer<typeof CountryUpdateSchema>;
+export type Country = z.infer<typeof CountrySchema>;
 
 // TrackGenre (junction)
 export type TrackGenreCreate = z.infer<typeof TrackGenreCreateSchema>;

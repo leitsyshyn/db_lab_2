@@ -3,4 +3,4 @@
 /* eslint-disable */
 "use strict"
 const { makeTypedQueryFactory: $mkFactory } = require("../runtime/library")
-exports.simpleQuery5 = /*#__PURE__*/ $mkFactory("\nSELECT\nt.*\nFROM \"Track\" t\nWHERE t.\"duration\" >= $2\nAND NOT EXISTS (\nSELECT 1\nFROM \"TrackGenre\" tg\nJOIN \"Genre\" g\nON g.id = tg.\"genreId\"\nWHERE tg.\"trackId\" = t.id\nAND g.name = $1\n);")
+exports.simpleQuery5 = /*#__PURE__*/ $mkFactory("SELECT\nt.*\nFROM \"Track\" t\nWHERE t.\"duration\" >= $2\nAND NOT EXISTS (\nSELECT 1\nFROM \"TrackGenre\" tg\nJOIN \"Genre\" g\nON g.id = tg.\"genreId\"\nWHERE tg.\"trackId\" = t.id\nAND g.name = $1\n);")

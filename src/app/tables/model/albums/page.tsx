@@ -1,6 +1,6 @@
 "use client";
 import { AlbumSchema } from "@/lib/schemas";
-import TablePage from "@/components/TablePage";
+import SchemaTable from "@/components/SchemaTable";
 
 import {
   createAlbum,
@@ -11,7 +11,7 @@ import { fetchAlbums } from "@/lib/api/tables";
 
 export default function Page() {
   return (
-    <TablePage
+    <SchemaTable
       title="Albums Table"
       item="Album"
       schema={AlbumSchema}

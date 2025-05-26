@@ -16,6 +16,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { ChevronsUpDown } from "lucide-react";
 
 export interface Option {
   label: string;
@@ -40,19 +41,21 @@ export const Combobox = forwardRef<HTMLButtonElement, ComboboxProps>(
             role="combobox"
             className="w-full justify-between"
           >
-            {options.find((o) => o.value === value)?.label ?? placeholder}
+            {options.find((o) => o.value === value)?.value ?? placeholder}
+            <ChevronsUpDown />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-full p-0">
           <Command>
-            <CommandInput placeholder="Type to search…" />
-            <CommandList>
+            <CommandInput placeholder="Search…" />
+            <CommandList className="max-h-48">
               <CommandEmpty>No results found.</CommandEmpty>
               <CommandGroup>
                 {options.map((opt) => (
                   <CommandItem
                     key={opt.value}
                     value={opt.value}
+                    keywords={[opt.label]}
                     onSelect={(value) => onChange?.(value)}
                   >
                     {opt.label}

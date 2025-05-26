@@ -1,16 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { DefaultValues, Path, useForm } from "react-hook-form";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { DefaultValues, useForm } from "react-hook-form";
 import {
   Dialog,
   DialogClose,
@@ -27,6 +18,7 @@ import { z, ZodObject, ZodRawShape } from "zod";
 import { QueryKey, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Pencil, Plus } from "lucide-react";
+import { SchemaForm } from "@/components/SchemaForm";
 
 interface ActionDialogProps<Schema extends ZodObject<ZodRawShape>> {
   action: string;
@@ -84,7 +76,12 @@ export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
             <Plus /> Create new {item}
           </Button>
         ) : action === "Edit" ? (
-          <Button variant="secondary" size="icon" disabled={mutation.isPending}>
+          <Button
+            className="hover:bg-primary hover:text-white"
+            variant="secondary"
+            size="icon"
+            disabled={mutation.isPending}
+          >
             <Pencil />
           </Button>
         ) : null}
@@ -99,24 +96,12 @@ export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
             {item.toLowerCase()}.
           </DialogDescription>
         </DialogHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {Object.keys(schema.shape).map((key) => (
-              <FormField
-                key={key}
-                control={form.control}
-                name={key as Path<FormValues>}
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{key}</FormLabel>
-                    <FormControl>
-                      <Input {...field} value={field.value ?? ""} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            ))}
+        <SchemaForm
+          schema={schema}
+          defaultValues={defaultValues as DefaultValues<z.infer<Schema>>}
+          onSubmit={onSubmit}
+          className="space-y-4"
+          renderSubmit={(form) => (
             <DialogFooter className="space-x-2">
               <DialogClose asChild>
                 <Button variant="secondary">Cancel</Button>
@@ -130,8 +115,8 @@ export function ActionDialog<Schema extends ZodObject<ZodRawShape>>({
                 Submit
               </Button>
             </DialogFooter>
-          </form>
-        </Form>
+          )}
+        />
       </DialogContent>
     </Dialog>
   );
